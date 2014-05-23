@@ -5,11 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
 	<ProjectGuid>{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}</ProjectGuid>
-=======
-	<ProjectGuid>{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}</ProjectGuid>
->>>>>>> origin/master
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -50,20 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+     <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\General.cs" />
-     <Compile Include="Assets\Resources\Scripts\Turret.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
-=======
-     <Compile Include="Assets\Enemies\Scripts\HomingEnemy.cs" />
-     <Compile Include="Assets\Enemies\Scripts\HomingEnemySearch.cs" />
-     <Compile Include="Assets\Enemies\Scripts\RegularEnemy.cs" />
-     <Compile Include="Assets\Enemies\Scripts\RegularEnemyPathReader.cs" />
-     <Compile Include="Assets\Enemies\Scripts\Turret.cs" />
-     <Compile Include="Assets\Enemies\Scripts\TurretSearch.cs" />
->>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
