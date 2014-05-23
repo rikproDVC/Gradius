@@ -52,6 +52,10 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
+     <Compile Include="Assets\Resources\General.cs" />
+     <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
+     <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
