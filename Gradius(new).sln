@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{93916ADF-26B6-36BC-5695-7A6F5E70C581}") = "Gradius", "Assembly-CSharp.csproj", "{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}"
+Project("{8AF1C00D-BDB9-7C16-FF95-251CBBA7B6EE}") = "Gradius(new)", "Assembly-CSharp.csproj", "{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,19 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA38A5E4-BB77-50E5-D2C1-3D1A68179193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-		GlobalSection(MonoDevelopProperties) = preSolution
-=======
-					GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> dfb0b2f8e493d38f6388fb74ed3ba6fd55ee6d8f
+									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
