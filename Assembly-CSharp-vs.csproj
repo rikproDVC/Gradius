@@ -46,12 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Enemies\Scripts\HomingEnemy.cs" />
-     <Compile Include="Assets\Enemies\Scripts\HomingEnemySearch.cs" />
-     <Compile Include="Assets\Enemies\Scripts\RegularEnemy.cs" />
-     <Compile Include="Assets\Enemies\Scripts\RegularEnemyPathReader.cs" />
-     <Compile Include="Assets\Enemies\Scripts\Turret.cs" />
-     <Compile Include="Assets\Enemies\Scripts\TurretSearch.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
+     <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
