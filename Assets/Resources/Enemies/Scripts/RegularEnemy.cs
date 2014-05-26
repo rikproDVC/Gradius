@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RegularEnemy : MonoBehaviour {
 	private Transform myTransform;
-	public static float enemySpeed = 3;
+	public static float enemySpeed = 10;
 
 	// Use this for initialization
 	void Start () {
