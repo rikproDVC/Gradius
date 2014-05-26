@@ -4,17 +4,13 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	private Transform myTransform;
-	public float playerSpeed = 5;
+	public float playerSpeed = 8;
 
 	// Use this for initialization
 	void Start () {
 			
 		myTransform = transform; 
-		//Spawn point		 x  y  z
-		//position to be at -8,-2,-1
-		
-		myTransform.position = new Vector3 (-8, -2, -1);
-
+	
 	}
 	
 	// Update is called once per frame
