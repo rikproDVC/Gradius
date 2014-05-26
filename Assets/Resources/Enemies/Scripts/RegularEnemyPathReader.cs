@@ -4,23 +4,17 @@ using System.Collections;
 public class RegularEnemyPathReader : MonoBehaviour {
 	private Transform myTransform;
 	public static Vector3 targetLocation;
+	private float timer;
 	
 	// Use this for initialization
 	void Start () {
 		myTransform = transform;
+		myTransform.position = new Vector3(7, 0, 0);
+		targetLocation = new Vector3(-3, 3, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		myTransform.Translate(Vector3.up * RegularEnemy.enemySpeed * Time.deltaTime);
 
-		if (targetLocation.y - myTransform.position.y > 0.01 || targetLocation.y - myTransform.position.y < 0.01)
-		{
-			if (myTransform.position.y < targetLocation.y)
-			{
-				myTransform.Rotate(Vector3.forward * 90 * Time.deltaTime);
-			}
-			else
-		}
 	}
 }
