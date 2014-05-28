@@ -53,7 +53,7 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\General.cs" />
-     <Compile Include="Assets\Resources\Player\Player.cs" />
+     <Compile Include="Assets\Resources\Player\Scripts\Player.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
