@@ -4,7 +4,7 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
 	private Transform myTransform;
-	public int currentSpeed = 20;
+	public int BulletSpeed = 20;
 
 	// Use this for initialization
 	void Start()
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		myTransform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
+		myTransform.Translate(Vector3.right * BulletSpeed * Time.deltaTime);
 
 		if (myTransform.position.x > 15)
 		{

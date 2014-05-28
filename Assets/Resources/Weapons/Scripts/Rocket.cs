@@ -16,5 +16,10 @@ public class Rocket : MonoBehaviour {
 	void Update()
 	{
 		myTransform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
+
+		if (myTransform.position.x > 15)
+		{
+			DestroyObject(this.gameObject);
+		}
 	}
 }
