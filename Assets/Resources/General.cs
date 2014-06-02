@@ -4,6 +4,7 @@ using System.Collections;
 public class General : MonoBehaviour {
 
 	public GameObject PlayerFab;
+	public GameObject RegularEnemyFab;
 
 	public Vector3 position;
 
@@ -12,6 +13,8 @@ public class General : MonoBehaviour {
 	{
 		position = new Vector3(0, 0, 0);
 		Instantiate(PlayerFab, position, Quaternion.identity);
+		position = new Vector3(15, 0, 0);
+		Instantiate(RegularEnemyFab, position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame

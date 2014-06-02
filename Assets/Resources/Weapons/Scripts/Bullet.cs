@@ -22,4 +22,13 @@ public class Bullet : MonoBehaviour {
 			DestroyObject(this.gameObject);
 		}
 	}
+
+	// Collision stuff
+	void OnTriggerEnter(Collider collider)
+	{
+		if(collider.gameObject.CompareTag("Enemy"))
+		{
+			Destroy(this.gameObject);
+		}
+	}
 }

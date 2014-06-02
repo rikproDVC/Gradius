@@ -6,14 +6,23 @@ public class RegularEnemy : MonoBehaviour {
 	public static float enemySpeed = 10;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		myTransform = transform;
-
-		myTransform.position = new Vector3(0, 0, 0);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
+		myTransform.Translate(Vector3.left * enemySpeed * Time.deltaTime);
+	}
 
+	// Collision stuff
+	void OnTriggerEnter(Collider collider)
+	{
+		if(collider.gameObject.CompareTag("Bullet"))
+		{
+			Destroy(this.gameObject);
+		}
 	}
 }
