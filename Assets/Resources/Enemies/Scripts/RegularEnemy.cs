@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RegularEnemy : MonoBehaviour {
 	private Transform myTransform;
-	public static float enemySpeed = 10;
+	public static float enemySpeed = 3;
 
 	// Use this for initialization
 	void Start()
@@ -14,7 +14,7 @@ public class RegularEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		myTransform.Translate(Vector3.left * enemySpeed * Time.deltaTime);
+
 	}
 
 	// Collision stuff
