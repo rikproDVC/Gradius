@@ -46,8 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Levels\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Levels\Scripts\Enemy.cs" />
      <Compile Include="Assets\Levels\Scripts\Meteorite.cs" />
      <Compile Include="Assets\Levels\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Levels\Scripts\Platformspawn.cs" />
+     <Compile Include="Assets\Levels\Scripts\Player.cs" />
+     <Compile Include="Assets\Levels\Scripts\Powerup.cs" />
+     <Compile Include="Assets\Levels\Scripts\Rocket.cs" />
      <Compile Include="Assets\Levels\Scripts\Scroll.cs" />
      <Compile Include="Assets\Levels\Scripts\Spawn.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
