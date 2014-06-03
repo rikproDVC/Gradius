@@ -24,9 +24,9 @@ public class Bullet : MonoBehaviour {
 	}
 
 	// Collision stuff
-	void OnTriggerEnter(Collider collider)
+	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.gameObject.CompareTag("Enemy"))
+		if(collider.transform.tag == "Enemy")
 		{
 			Destroy(this.gameObject);
 		}

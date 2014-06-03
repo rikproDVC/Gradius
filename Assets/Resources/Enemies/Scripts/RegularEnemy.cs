@@ -18,9 +18,14 @@ public class RegularEnemy : MonoBehaviour {
 	}
 
 	// Collision stuff
-	void OnTriggerEnter(Collider collider)
+	void OnCollisionEnter2D(Collision2D collider)
 	{
-		if(collider.gameObject.CompareTag("Bullet"))
+		Debug.Log("TEST TEST TEST TEST");
+		if(collider.transform.tag == "Bullet")
+		{
+			Destroy(this.gameObject);
+		}
+		if(collider.transform.tag == "Player")
 		{
 			Destroy(this.gameObject);
 		}

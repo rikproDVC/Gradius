@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Levels\Scripts\Meteorite.cs" />
+     <Compile Include="Assets\Levels\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Levels\Scripts\Scroll.cs" />
+     <Compile Include="Assets\Levels\Scripts\Spawn.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
