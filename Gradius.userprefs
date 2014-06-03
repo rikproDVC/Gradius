@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\RegularEnemy.cs">
+    <Files>
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="8" Column="32" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="29" Column="3" />
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" Line="17" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

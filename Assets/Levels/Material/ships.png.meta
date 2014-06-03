@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: ae5e1dced11623048a8966dbd87ef2d9
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Ship_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 3150
+        width: 149
+        height: 108
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Ammo_0
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 3104
+        width: 120
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: Ammo_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1797
+        width: 36
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: ships_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 2869
+        width: 137
+        height: 146
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: ships_4
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 2844
+        width: 136
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 

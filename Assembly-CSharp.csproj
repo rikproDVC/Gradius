@@ -46,6 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Levels\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Levels\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Levels\Scripts\Meteorite.cs" />
+     <Compile Include="Assets\Levels\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Levels\Scripts\Platformspawn.cs" />
+     <Compile Include="Assets\Levels\Scripts\Player.cs" />
+     <Compile Include="Assets\Levels\Scripts\Powerup.cs" />
+     <Compile Include="Assets\Levels\Scripts\Rocket.cs" />
+     <Compile Include="Assets\Levels\Scripts\Scroll.cs" />
+     <Compile Include="Assets\Levels\Scripts\Spawn.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
@@ -53,7 +63,8 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\General.cs" />
-     <Compile Include="Assets\Resources\Player\Player.cs" />
+     <Compile Include="Assets\Resources\Player\Scripts\Player.cs" />
+     <Compile Include="Assets\Resources\PowerUps\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
