@@ -14,9 +14,13 @@ public class MoveScript : MonoBehaviour
 	
 	void Update()
 	{
-		transform.Translate(Vector3.left * xSpeed * Time.deltaTime);
-
+		if (gameObject.tag == "Meteorite" || gameObject.tag == "Powerup" || gameObject.tag =="Platform" ) {
+						transform.Translate (Vector3.left * xSpeed * Time.deltaTime);
+				}
+		if (gameObject.tag == "Enemy") {
+			transform.Translate(Vector3.down * xSpeed * Time.deltaTime);
+				}
+			}
 	}
 	
 	
-}
