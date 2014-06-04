@@ -1,33 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RegularEnemy : MonoBehaviour {
-	private Transform myTransform;
+public class RegularEnemy: MonoBehaviour
+{
+	private Transform MyTransform;
 	public static float enemySpeed = 3;
-
+	
 	// Use this for initialization
 	void Start()
 	{
-		myTransform = transform;
+		MyTransform = transform;
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-
-	}
-
-	// Collision stuff
-	void OnCollisionEnter2D(Collision2D collider)
-	{
-		Debug.Log("TEST TEST TEST TEST");
-		if(collider.transform.tag == "Bullet")
+		if (MyTransform.position.x < -30)
 		{
-			Destroy(this.gameObject);
+			DestroyObject (this.gameObject);
 		}
-		if(collider.transform.tag == "Player")
+	}
+	
+	// Collision detector for Player
+	void  OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "Player")
 		{
-			Destroy(this.gameObject);
+			Player.PlayerScore -= 100;
+			Destroy (this.gameObject);
+		}
+
+		if (other.gameObject.tag == "Bullet")
+		{
+			Player.PlayerScore += 100;
+			Destroy (this.gameObject);
+		}
+
+		if (other.gameObject.tag == "Laser")
+		{
+			Player.PlayerScore += 100;
+			Destroy (this.gameObject);
+		}
+
+		if (other.gameObject.tag == "Rocket")
+		{
+			Player.PlayerScore += 100;
+			Destroy (this.gameObject);
 		}
 	}
 }

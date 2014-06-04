@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 	public static float BulletROF;
 	public static int LaserCharge = 100;
 	public static bool LaserActive = false;
+	public static int PlayerScore = 0;
 
 	// Use this for initialization
 	void Start()
@@ -146,5 +147,15 @@ public class Player : MonoBehaviour {
 			}
 
 		}
+	}
+
+	void  OnTriggerEnter2D(Collider2D otherCollider2D)
+	{
+		if (otherCollider2D.tag == "Powerup") {
+			
+			//PlayerSpeed=8;
+			//BulletRate=0.25f;
+		} 
+		
 	}
 }

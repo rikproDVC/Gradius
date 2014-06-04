@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rocket : MonoBehaviour {
+public class Rocket : MonoBehaviour
+{
 
 	private Transform myTransform;
 	public int currentSpeed = 7;
