@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	public GameObject RocketFab;
 	public GameObject LaserFab;
 
-	public int PowerUp = 0;
+	public static int PowerUp = 0;
 	public int BulletCount_PowerUp = 0;
 	public int RocketCount_PowerUp = 0;
 	

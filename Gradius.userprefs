@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\Spawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\General.cs">
     <Files>
-      <File FileName="Assets\Resources\Levels\Scripts\Spawn.cs" Line="13" Column="27" />
+      <File FileName="Assets\Resources\Levels\Scripts\Powerup.cs" Line="31" Column="1" />
+      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="9" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
