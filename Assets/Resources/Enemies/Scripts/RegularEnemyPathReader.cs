@@ -5,37 +5,45 @@ public class RegularEnemyPathReader : MonoBehaviour {
 	private Transform myTransform;
 
 	//set variables for movement
-	public float endMarker;
+	public float angle;
+	public float xMarker;
+	public float yMarker;
+
 	private bool newUpdate;
-	private float angle;
 	private int pathNumber = 0;
-	private float[] angles = new float[] {45, 135, 45, 135, 45, 135};
-	private float[] endMarkers = new float[] {2f, -3f, 2f, -3f, 2f, -3f};
+	private float nullPath = 361;
+
+	private float[] angles;
+	private float[] xMarkers;
+	private float[] yMarkers;
+
 
 	// Use this for initialization
 	void Start () {
 		myTransform = transform;
 
-		//set the angle the enemy has to travel at
-		newUpdate = true;;
+		angles = new float[] {45, 135, 45, 135, 45, 135};
+		xMarkers = new float[] {nullPath, nullPath, nullPath, nullPath, nullPath, nullPath};
+		yMarkers = new float[] {2, -3, 2, -3, 2, -3};
 
-		//set the end marker of the path and the length of the path
-		endMarker = -1f;
+		//set the angle the enemy has to travel at
+		newUpdate = true;
 	}
 	
 	void Update()
 	{
 		if (!newUpdate)
 		{
-			//make the ship move to ENDMARKER y
-				if (!(myTransform.position.y < endMarker + 0.5f && myTransform.position.y > endMarker - 0.5f))
-				{
-					myTransform.Translate (Vector3.up * RegularEnemy.enemySpeed * Time.deltaTime);
-				}
-				else
-				{
-					newUpdate = true;
-				}
+			//make the ship move to ENDMARKER x or y
+			if (myTransform.position.x < xMarker + 0.5f && myTransform.position.x > xMarker - 0.5f || 
+			myTransform.position.y < yMarker + 0.5f && myTransform.position.y > yMarker - 0.5f)
+			{
+				newUpdate = true;
+			}
+			else
+			{
+				myTransform.Translate (Vector3.up * RegularEnemy.enemySpeed * Time.deltaTime);
+			}
 			//make the ship rotate to ANGLE degrees
 			if (!(myTransform.rotation.eulerAngles.z < angle + 1f && myTransform.rotation.eulerAngles.z > angle - 1f))
 			{
@@ -51,10 +59,21 @@ public class RegularEnemyPathReader : MonoBehaviour {
 		}
 		else
 		{
-			angle = angles[pathNumber];
-			endMarker = endMarkers[pathNumber];
-			pathNumber += 1;
-			newUpdate = false;
+			if (angles.Length <= pathNumber)
+			{
+				angle = 90;
+				xMarker = -21;
+				yMarker = nullPath;
+				newUpdate = false;
+			}
+			else
+			{
+				angle = angles[pathNumber];
+				xMarker = xMarkers[pathNumber];
+				yMarker = yMarkers[pathNumber];
+				pathNumber += 1;
+				newUpdate = false;
+			}
 		}
 	}
 }
