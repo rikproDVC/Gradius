@@ -1,9 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\General.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\myGUI\myGUI.cs">
     <Files>
-      <File FileName="Assets\Resources\Levels\Scripts\Powerup.cs" Line="31" Column="1" />
-      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="9" Column="26" />
+      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
