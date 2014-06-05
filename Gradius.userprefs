@@ -1,27 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\Powerup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\Player.cs">
     <Files>
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="185" Column="1" />
       <File FileName="Assets\Resources\Levels\Scripts\Powerup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\myGUI\myGUI.cs">
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\General.cs">
->>>>>>> a3e0fa9ef34c03613f490bf15bdabad9c8f9539d
-    <Files>
-      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\myGUI\myGUI.cs" Line="9" Column="35" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="1" Column="1" />
->>>>>>> af07a59e0b5e4e00aa1273093892bb99c2f9a85d
+      <File FileName="Assets\Resources\Levels\Scripts\Platformspawn.cs" Line="48" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

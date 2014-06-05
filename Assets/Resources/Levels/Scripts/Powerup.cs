@@ -20,8 +20,9 @@ public class Powerup : MonoBehaviour {
 	void  OnTriggerEnter2D(Collider2D otherCollider2D)
 	{
 		if (otherCollider2D.tag == "Player") {
+			Player.PowerUp+=1;
 			Destroy(this.gameObject);
-			Player.PowerUp=1;
+
 		} 
 
 	}
