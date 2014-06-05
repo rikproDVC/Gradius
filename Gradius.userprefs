@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\General.cs">
     <Files>
       <File FileName="Assets\Resources\Levels\Scripts\Powerup.cs" Line="31" Column="1" />

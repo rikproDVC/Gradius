@@ -24,25 +24,25 @@ public class RegularEnemy: MonoBehaviour
 	// Collision detector for Player
 	void  OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "Player")
+		if (other.tag == "Player")
 		{
 			Player.PlayerScore -= 100;
 			Destroy (this.gameObject);
 		}
 
-		if (other.gameObject.tag == "Bullet")
+		if (other.tag == "Bullet")
 		{
 			Player.PlayerScore += 100;
 			Destroy (this.gameObject);
 		}
 
-		if (other.gameObject.tag == "Laser")
+		if (other.tag == "Laser")
 		{
 			Player.PlayerScore += 100;
 			Destroy (this.gameObject);
 		}
 
-		if (other.gameObject.tag == "Rocket")
+		if (other.tag == "Rocket")
 		{
 			Player.PlayerScore += 100;
 			Destroy (this.gameObject);
