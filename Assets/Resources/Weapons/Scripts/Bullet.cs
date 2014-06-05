@@ -24,9 +24,9 @@ public class Bullet : MonoBehaviour {
 	}
 
 	// Collision stuff
-	void OnCollisionEnter2D(Collision2D otherCollision2D)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(otherCollision2D.transform.tag == "Enemy")
+		if(other.transform.tag == "Enemy")
 		{
 			Destroy(this.gameObject);
 		}
