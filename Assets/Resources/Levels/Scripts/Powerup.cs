@@ -21,6 +21,7 @@ public class Powerup : MonoBehaviour {
 	{
 		if (otherCollider2D.tag == "Player") {
 			Destroy(this.gameObject);
+			Player.PowerUp=1;
 		} 
 
 	}

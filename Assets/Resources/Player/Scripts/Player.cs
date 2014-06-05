@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	//Player Related
-	public float playerSpeed = 5;
+	public float playerSpeed = 8;
 
 	private Transform myTransform;
 
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	public GameObject RocketFab;
 	public GameObject LaserFab;
 
-	public int PowerUp = 0;
+	public static int PowerUp = 0;
 	public int BulletCount_PowerUp = 0;
 	public int RocketCount_PowerUp = 0;
 	
@@ -149,12 +149,11 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void  OnTriggerEnter2D(Collider2D otherCollider2D)
+	void  OnTriggerEnter2D(Collider2D other)
 	{
-		if (otherCollider2D.tag == "Powerup") {
-			
-			//PlayerSpeed=8;
-			//BulletRate=0.25f;
+		if (other.gameObject.tag == "Powerup")
+		{
+			PowerUp = 1;
 		} 
 		
 	}
