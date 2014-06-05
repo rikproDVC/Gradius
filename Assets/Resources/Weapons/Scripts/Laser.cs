@@ -4,10 +4,10 @@ using System.Collections;
 public class Laser : MonoBehaviour {
 
 	private Transform myTransform;
-	public int currentSpeed = 20;
 
 	private float LaserTimer;
 	private float ChargeTimer;
+
 	private Vector3 Position;
 
 	// Use this for initialization
@@ -24,6 +24,9 @@ public class Laser : MonoBehaviour {
 		//Position compared to player position
 		Position = Player.LaserPosition;
 		myTransform.position = Position;
+
+		//Timer for damage
+
 
 		//Timer to destroy
 		if(Player.LaserCharge == 0)

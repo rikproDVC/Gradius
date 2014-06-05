@@ -23,4 +23,13 @@ public class Rocket : MonoBehaviour
 			DestroyObject(this.gameObject);
 		}
 	}
+
+	// Collision stuff
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.transform.tag == "Enemy")
+		{
+			Destroy(this.gameObject);
+		}
+	}
 }
