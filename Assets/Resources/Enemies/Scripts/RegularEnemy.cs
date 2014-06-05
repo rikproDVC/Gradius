@@ -16,9 +16,9 @@ public class RegularEnemy: MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (MyTransform.position.x < -30)
+		if (MyTransform.position.x < -20)
 		{
-			DestroyObject (this.gameObject);
+			Destroy(this.gameObject);
 		}
 
 		if (enemyHealth <= 0)
