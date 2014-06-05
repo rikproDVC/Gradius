@@ -11,9 +11,9 @@ public class General : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		position = new Vector3(0, 0, 0);
+		position = new Vector3(0, 0, 1);
 		Instantiate(PlayerFab, position, Quaternion.identity);
-		position = new Vector3(15, 0, 0);
+		position = new Vector3(15, 0, 1);
 		Instantiate(RegularEnemyFab, position, Quaternion.identity);
 	}
 	
