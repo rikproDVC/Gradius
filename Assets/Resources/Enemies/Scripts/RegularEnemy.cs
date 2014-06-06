@@ -3,9 +3,10 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-	private Transform MyTransform;
 	public static float enemySpeed = 3;
-	public int enemyHealth = 12;
+	public static int Health = 12;
+
+	private Transform MyTransform;
 	
 	// Use this for initialization
 	void Start()
@@ -21,35 +22,10 @@ public class RegularEnemy: MonoBehaviour
 			Destroy(this.gameObject);
 		}
 
-		if (enemyHealth <= 0)
+		if (Health <= 0)
 		{
+			Player.PlayerScore += 100;
 			DestroyObject (this.gameObject);
-		}
-	}
-
-	// Collision detector for Weapons
-	void  OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.tag == "Bullet")
-		{
-			Player.PlayerScore += 100;
-			enemyHealth -= 4;
-		}
-
-		if (other.tag == "Rocket")
-		{
-			Player.PlayerScore += 100;
-			enemyHealth -= 12;
-		}
-	}
-
-	// Collision detector for Laser
-	void onTriggerStay2D(Collider2D other)
-	{
-		if (other.tag == "Laser")
-		{
-			Player.PlayerScore += 100;
-			enemyHealth -= 1;
 		}
 	}
 
@@ -61,5 +37,33 @@ public class RegularEnemy: MonoBehaviour
 			Player.PlayerScore -= 100;
 			Destroy (this.gameObject);
 		}
+	}
+
+	// Collision ...
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		//... with Bullet
+		if(other.transform.tag == "Bullet")
+		{
+			RegularEnemy.Health -= Bullet.Damage;
+		}
+
+		//... with Rocket
+		if(other.transform.tag == "Rocket")
+		{
+			RegularEnemy.Health -= Rocket.ImpactDamage;
+		}
+
+		//... with Explosion
+//		if(other.transform.tag == "Explosion")
+//		{
+//			RegularEnemy.Health -= Rocket.AreaDamage;
+//		}
+
+		//... with Laser
+//		if(other.transform.tag == "Laser")
+//		{
+//			RegularEnemy.Health -= Laser.Damage;
+//		}
 	}
 }

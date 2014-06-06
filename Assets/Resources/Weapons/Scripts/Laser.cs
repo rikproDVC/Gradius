@@ -3,41 +3,40 @@ using System.Collections;
 
 public class Laser : MonoBehaviour {
 
+	public static float ROF = 1f;
+	public static float ConsumeRate = 0.01f;
+	public static int Damage = 1;
+
+	private float DamageTimer = 0f;
+	private float ConsumeTimer = 0f;
 	private Transform myTransform;
-
-	private float LaserTimer;
-	private float ChargeTimer;
-
 	private Vector3 Position;
 
 	// Use this for initialization
 	void Start()
 	{
 		myTransform = transform;
-		LaserTimer = 0f;
-		ChargeTimer = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		//Position compared to player position
-		Position = Player.LaserPosition;
+		//Laser position in relation to player position
+		Position = Player.PlayerPosition;
 		myTransform.position = Position;
 
-		//Timer for damage
-
-
-		//Timer to destroy
-		if(Player.LaserCharge == 0)
+		//Consume charge
+		if(Time.time - ConsumeTimer > ConsumeRate)
 		{
-			Player.LaserActive = false;
-			DestroyObject(this.gameObject);
+			LaserPU.LaserCharge -= 1;
+			ConsumeTimer = Time.time;
 		}
-		if(Time.time - ChargeTimer > 0.05f && Player.LaserCharge > 0)
+
+		//Destroy laser
+		if(LaserPU.LaserCharge == 0)
 		{
-			Player.LaserCharge -= 1;
-			ChargeTimer = Time.time;
+			LaserPU.PauseTimer = Time.time;
+			DestroyObject(this.gameObject);
 		}
 	}
 }

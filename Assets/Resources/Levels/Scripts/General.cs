@@ -20,6 +20,6 @@ public class General : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		print("Laser Charge: " + Player.LaserCharge);
+
 	}
 }
