@@ -22,7 +22,7 @@ public class Rocket : MonoBehaviour
 
 		if (myTransform.position.x > 15)
 		{
-			DestroyObject(this.gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 

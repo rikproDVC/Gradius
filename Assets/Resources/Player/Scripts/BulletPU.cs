@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletPU : MonoBehaviour {
 
-	public static int PowerLevel = 4;
+	public static int PowerLevel = 0;
 	public GameObject BulletFab;
 
 	private Transform myTransform;
@@ -26,23 +26,23 @@ public class BulletPU : MonoBehaviour {
 			//ROF
 			if(PowerLevel == 0)
 			{
-				ROF = 0.5f;
+				ROF = 1f;
 			}
 			if(PowerLevel == 1)
 			{
-				ROF = 0.4f;
+				ROF = 0.9f;
 			}
 			if(PowerLevel == 2)
 			{
-				ROF = 0.3f;
+				ROF = 0.8f;
 			}
 			if(PowerLevel == 3)
 			{
-				ROF = 0.2f;
+				ROF = 0.7f;
 			}
 			if(PowerLevel == 4)
 			{
-				ROF = 0.1f;
+				ROF = 0.6f;
 			}
 
 			//PowerUp

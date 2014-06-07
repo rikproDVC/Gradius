@@ -3,7 +3,8 @@ using System.Collections;
 
 public class RocketPU : MonoBehaviour {
 	
-	public static int PowerLevel = 4;
+    public static int PowerLevel = 0;
+    public static int RocketAmmo = 10;
 	public GameObject RocketFab;
 
 	private Transform myTransform;
@@ -21,7 +22,7 @@ public class RocketPU : MonoBehaviour {
 	void Update ()
 	{
 		//Shoot Rocket
-		if(Input.GetKey("."))
+		if(Input.GetKey(".") && RocketAmmo > 0)
 		{
 			//ROF + Damage
 			if(PowerLevel == 0)
@@ -59,15 +60,12 @@ public class RocketPU : MonoBehaviour {
 				}
 				if(PowerLevel >= 1)
 				{
-					if(Time.time - Timer > ROF)
-					{
-						position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y - 0.5f, myTransform.position.z);
-						Instantiate(RocketFab, position, Quaternion.Euler(0, 0, -80));
-						position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y + 0.5f, myTransform.position.z);
-						Instantiate(RocketFab, position, Quaternion.Euler(0, 0, 80));
-						Timer = Time.time;
-					}
+					position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y - 0.5f, myTransform.position.z);
+					Instantiate(RocketFab, position, Quaternion.Euler(0, 0, -80));
+					position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y + 0.5f, myTransform.position.z);
+					Instantiate(RocketFab, position, Quaternion.Euler(0, 0, 80));
 				}
+                RocketAmmo -= 1;
 				Timer = Time.time;
 			}
 		}

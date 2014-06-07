@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LaserPU : MonoBehaviour {
 	
-	public static int PowerLevel = 4;
+	public static int PowerLevel = 0;
 	public static int LaserCharge = 100;
 	public GameObject LaserFab;
 	public static float PauseTimer = 0f;

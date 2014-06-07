@@ -3,21 +3,24 @@ using System.Collections;
 
 public class PowerUp : MonoBehaviour {
 
-	private string[] TypeArray = new string[4] {"Bullet", "Rocket", "Laser", "Player"};
-	private int TypeNum;
-	private string Type;
+	private string[] TypeArray = new string[7] {"Bullet", "Rocket", "Laser", "PlayerSpeed", "PlayerLive", "RocketAmmo", "Shield"};
+    private int TypeNum;
+	public string Type;
+    private int Speed = 5;
+    private Transform myTransform;
 
 	// Use this for initialization
 	void Start ()
 	{
-		TypeNum = Random.Range(0, 4);
+        TypeNum = Random.Range(0, 7);
 		Type = TypeArray[TypeNum];
+        myTransform = transform;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
+        myTransform.Translate(Vector3.left * Speed * Time.deltaTime);
 	}
 
 	// Collision Detector
@@ -37,13 +40,25 @@ public class PowerUp : MonoBehaviour {
 			{
 				LaserPU.PowerLevel += 1;
 			}
-			if (Type == "Player" && Player.PowerLevel < 4)
-			{
-				Player.PowerLevel += 1;
-			}
+            if (Type == "PlayerSpeed" && Player.PowerLevel < 4)
+            {
+                Player.PowerLevel += 1;
+            }
+            if (Type == "PlayerLive")
+            {
+                Player.PlayerLives += 1;
+            }
+            if (Type == "RocketAmmo")
+            {
+                RocketPU.RocketAmmo += 5;
+            }
+            if (Type == "Shield")
+            {
+                 Player.Shield += 1;
+            }
 
 			Player.PlayerScore += 50;
-			Destroy (this.gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 }

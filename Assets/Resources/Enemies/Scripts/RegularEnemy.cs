@@ -4,8 +4,9 @@ using System.Collections;
 public class RegularEnemy: MonoBehaviour
 {
 	public static float enemySpeed = 3;
-	public static int Health = 12;
+    public GameObject PowerUpFab;
 
+	private int Health = 12;
 	private Transform MyTransform;
 	
 	// Use this for initialization
@@ -25,7 +26,12 @@ public class RegularEnemy: MonoBehaviour
 		if (Health <= 0)
 		{
 			Player.PlayerScore += 100;
-			DestroyObject (this.gameObject);
+			if(Random.Range(1, 25) == 1)
+			{
+                Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                Instantiate(PowerUpFab, position, Quaternion.identity);
+			}
+			Destroy(this.gameObject);
 		}
 	}
 
@@ -35,7 +41,7 @@ public class RegularEnemy: MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			Player.PlayerScore -= 100;
-			Destroy (this.gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 
@@ -45,25 +51,25 @@ public class RegularEnemy: MonoBehaviour
 		//... with Bullet
 		if(other.transform.tag == "Bullet")
 		{
-			RegularEnemy.Health -= Bullet.Damage;
+			Health -= Bullet.Damage;
 		}
 
 		//... with Rocket
 		if(other.transform.tag == "Rocket")
 		{
-			RegularEnemy.Health -= Rocket.ImpactDamage;
+			Health -= Rocket.ImpactDamage;
 		}
 
 		//... with Explosion
 //		if(other.transform.tag == "Explosion")
 //		{
-//			RegularEnemy.Health -= Rocket.AreaDamage;
+//			Health -= Rocket.AreaDamage;
 //		}
 
 		//... with Laser
 //		if(other.transform.tag == "Laser")
 //		{
-//			RegularEnemy.Health -= Laser.Damage;
+//			Health -= Laser.Damage;
 //		}
 	}
 }

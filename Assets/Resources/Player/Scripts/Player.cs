@@ -3,8 +3,10 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public static int PowerLevel = 4;
-	public static int PlayerScore = 0;
+	public static int PowerLevel = 0;
+    public static int PlayerScore = 0;
+    public static int PlayerLives = 3;
+    public static int Shield = 1;
 	public static Vector3 PlayerPosition;
 
 	private float Speed = 8;
@@ -37,11 +39,10 @@ public class Player : MonoBehaviour {
 		{
 			Speed = 16;
 		}
-<<<<<<< HEAD
+
 		//Move the player left and right
 		myTransform.Translate (Vector3.right * Speed * Input.GetAxis ("Horizontal") * Time.deltaTime);
 		myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);
-=======
 
 		var dist = (transform.position - Camera.main.transform.position).z;
 		
@@ -62,12 +63,10 @@ public class Player : MonoBehaviour {
 			).y;
 		
 		transform.position = new Vector3(
-			Mathf.Clamp(transform.position.x, leftBorder, rightBorder),
-			Mathf.Clamp(transform.position.y, topBorder, bottomBorder),
-			transform.position.z
+			Mathf.Clamp(myTransform.position.x, leftBorder, rightBorder),
+			Mathf.Clamp(myTransform.position.y, topBorder, bottomBorder),
+			myTransform.position.z
 			);
-	}
->>>>>>> 73c383200782971d62d46c46e9ab7bcbdb3294c6
 
 		//PlayerPosition used for Laser
 		PlayerPosition = new Vector3(myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);

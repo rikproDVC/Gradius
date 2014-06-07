@@ -36,7 +36,7 @@ public class Laser : MonoBehaviour {
 		if(LaserPU.LaserCharge == 0)
 		{
 			LaserPU.PauseTimer = Time.time;
-			DestroyObject(this.gameObject);
+			Destroy(this.gameObject);
 		}
 	}
 }

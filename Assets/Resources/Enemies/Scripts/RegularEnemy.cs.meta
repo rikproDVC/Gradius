@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: 5f57e07b32e594e48ab9e8adbae56d79
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PowerUpFab: {fileID: 100000, guid: eb88b0b1869de5a4cb94fa840ce5e06a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
