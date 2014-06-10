@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletPU : MonoBehaviour {
 
-	public static int PowerLevel = 0;
+	public static int PowerLevel = 4;
 	public GameObject BulletFab;
 
 	private Transform myTransform;
@@ -14,7 +14,7 @@ public class BulletPU : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		myTransform = transform;
+        myTransform = transform;
 	}
 	
 	// Update is called once per frame

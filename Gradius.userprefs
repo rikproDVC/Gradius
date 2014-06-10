@@ -1,12 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\BulletPU.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Weapons\Scripts\Laser.cs">
     <Files>
-      <File FileName="Assets\Resources\PowerUps\Scripts\PowerUp.cs" Line="13" Column="15" />
-      <File FileName="Assets\Resources\myGUI\Scripts\myGUI.cs" Line="9" Column="74" />
-      <File FileName="Assets\Resources\Player\Scripts\RocketPU.cs" Line="7" Column="38" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="21" Column="2" />
-      <File FileName="Assets\Resources\Player\Scripts\BulletPU.cs" Line="45" Column="16" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Shield.cs" Line="20" Column="41" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Laser.cs" Line="39" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

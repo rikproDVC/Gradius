@@ -54,7 +54,7 @@ public class PowerUp : MonoBehaviour {
             }
             if (Type == "Shield")
             {
-                 Player.Shield += 1;
+                Player.Shield += 1;
             }
 
 			Player.PlayerScore += 50;
