@@ -3,38 +3,48 @@ using System.Collections;
 
 public class Platformspawn: MonoBehaviour
 {
-	private Vector3 position;
 	public GameObject Prefab;
-	private Player anotherScript;
+	public GameObject Prefab2;
 
+	private Vector3 position;
+	private bool spawned1;
+	private bool spawned2;
 
-
-	void Awake()
-	{
-		anotherScript = GetComponent<Player>();
-	}
-
+	// Use this for initialization
 	void Start()
 	{
-
+        spawned1 = false;
+        spawned2 = false;
 	}
-
+	
 	void Update()
 	{
-		if (Player.PlayerScore > 1000) 
-		{
-			spawn();
+		if (Player.PlayerScore == 1000)
+        {
+            if (spawned1 == false)
+			{
+				Invoke ("spawn1", 0f);
+                spawned1 = true;
+			}
 		}
-		if (Prefab.transform.position.x < -30) {
-		DestroyObject (this.gameObject);
+		if (Player.PlayerScore == 2000)
+        {
+			if (spawned2 == false)
+			{
+				Invoke ("spawn2", 0f);
+                spawned2 = true;
+			}
 		}
-
 	}
-
-	void spawn()
+	
+	void spawn1()
 	{
-			position =new Vector3 (23, 0.3f ,1);
-			Instantiate (Prefab,position,Quaternion.identity);
+		position = new Vector3 (23, 0.3f ,1);
+		Instantiate (Prefab,position,Quaternion.identity);
 	}
-
+	void spawn2()
+	{
+		position = new Vector3 (23, 0.3f ,1);
+		Instantiate (Prefab2,position,Quaternion.identity);
+	}
 }

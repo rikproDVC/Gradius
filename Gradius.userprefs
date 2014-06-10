@@ -1,8 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\Player.cs">
     <Files>
       <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="16" Column="31" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\BulletPU.cs">
+    <Files>
+      <File FileName="Assets\Resources\PowerUps\Scripts\PowerUp.cs" Line="13" Column="15" />
+      <File FileName="Assets\Resources\myGUI\Scripts\myGUI.cs" Line="9" Column="74" />
+      <File FileName="Assets\Resources\Player\Scripts\RocketPU.cs" Line="7" Column="38" />
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="21" Column="2" />
+      <File FileName="Assets\Resources\Player\Scripts\BulletPU.cs" Line="45" Column="16" />
+>>>>>>> fe011507daf143ce0fb169cb459d306606158bd8
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

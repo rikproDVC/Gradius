@@ -54,17 +54,18 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\General.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Meteorite.cs" />
-     <Compile Include="Assets\Resources\Levels\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Platformspawn.cs" />
-     <Compile Include="Assets\Resources\Levels\Scripts\Powerup.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Scroll.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Spawn.cs" />
+     <Compile Include="Assets\Resources\Player\Scripts\BulletPU.cs" />
+     <Compile Include="Assets\Resources\Player\Scripts\LaserPU.cs" />
      <Compile Include="Assets\Resources\Player\Scripts\Player.cs" />
+     <Compile Include="Assets\Resources\Player\Scripts\RocketPU.cs" />
      <Compile Include="Assets\Resources\PowerUps\Scripts\PowerUp.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
-     <Compile Include="Assets\Resources\myGUI\myGUI.cs" />
+     <Compile Include="Assets\Resources\myGUI\Scripts\myGUI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

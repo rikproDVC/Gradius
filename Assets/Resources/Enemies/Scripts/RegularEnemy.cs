@@ -3,8 +3,11 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-	private Transform MyTransform;
 	public static float enemySpeed = 3;
+    public GameObject PowerUpFab;
+
+	private int Health = 12;
+	private Transform MyTransform;
 	
 	// Use this for initialization
 	void Start()
@@ -19,33 +22,54 @@ public class RegularEnemy: MonoBehaviour
 		{
 			Destroy(this.gameObject);
 		}
+
+		if (Health <= 0)
+		{
+			Player.PlayerScore += 100;
+			if(Random.Range(1, 25) == 1)
+			{
+                Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                Instantiate(PowerUpFab, position, Quaternion.identity);
+			}
+			Destroy(this.gameObject);
+		}
 	}
-	
+
 	// Collision detector for Player
-	void  OnTriggerEnter2D(Collider2D other)
+	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.tag == "Player")
+		if (other.gameObject.tag == "Player")
 		{
 			Player.PlayerScore -= 100;
-			Destroy (this.gameObject);
+			Destroy(this.gameObject);
+		}
+	}
+
+	// Collision ...
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		//... with Bullet
+		if(other.transform.tag == "Bullet")
+		{
+			Health -= Bullet.Damage;
 		}
 
-		if (other.tag == "Bullet")
+		//... with Rocket
+		if(other.transform.tag == "Rocket")
 		{
-			Player.PlayerScore += 100;
-			Destroy (this.gameObject);
+			Health -= Rocket.ImpactDamage;
 		}
 
-		if (other.tag == "Laser")
-		{
-			Player.PlayerScore += 100;
-			Destroy (this.gameObject);
-		}
+		//... with Explosion
+//		if(other.transform.tag == "Explosion")
+//		{
+//			Health -= Rocket.AreaDamage;
+//		}
 
-		if (other.tag == "Rocket")
-		{
-			Player.PlayerScore += 100;
-			Destroy (this.gameObject);
-		}
+		//... with Laser
+//		if(other.transform.tag == "Laser")
+//		{
+//			Health -= Laser.Damage;
+//		}
 	}
 }
