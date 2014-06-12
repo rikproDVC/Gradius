@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public static int PlayerScore = 0;
     public static int PlayerLives = 3;
     public static int Shield = 1;
+   
 	public static Vector3 PlayerPosition;
 
 	private float Speed = 8;
@@ -71,4 +72,14 @@ public class Player : MonoBehaviour {
 		//PlayerPosition used for Laser
 		PlayerPosition = new Vector3(myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
 	}
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
+        {
+            Player.PlayerScore -= 200;
+        }
+    }
+
+
 }

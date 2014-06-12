@@ -4,9 +4,9 @@ using System.Collections;
 public class Platformspawn: MonoBehaviour
 {
 	public GameObject Prefab;
-	public GameObject Prefab2;
+    public GameObject Prefab2;
 
-	private Vector3 position;
+    private Vector3 position = new Vector3 (23, 0.3f ,1);
 	private bool spawned1;
 	private bool spawned2;
 
@@ -15,7 +15,8 @@ public class Platformspawn: MonoBehaviour
 	{
         spawned1 = false;
         spawned2 = false;
-	}
+    
+  	}
 	
 	void Update()
 	{
@@ -23,11 +24,11 @@ public class Platformspawn: MonoBehaviour
         {
             if (spawned1 == false)
 			{
-				Invoke ("spawn1", 0f);
+             	Invoke ("Example", 0f);
                 spawned1 = true;
 			}
 		}
-		if (Player.PlayerScore == 2000)
+		if (Player.PlayerScore == 9000)
         {
 			if (spawned2 == false)
 			{
@@ -36,11 +37,14 @@ public class Platformspawn: MonoBehaviour
 			}
 		}
 	}
-	
+
+
 	void spawn1()
 	{
-		position = new Vector3 (23, 0.3f ,1);
-		Instantiate (Prefab,position,Quaternion.identity);
+        position = new Vector3 (23, 0.3f ,1);
+       Instantiate(Prefab,position, Quaternion.identity);
+    
+          
 	}
 	void spawn2()
 	{

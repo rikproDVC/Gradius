@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}"
+# Visual Studio 2008
+
+Project("{93916ADF-26B6-36BC-5695-7A6F5E70C581}") = "Gradius", "Assembly-CSharp.csproj", "{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,7 +14,10 @@ Global
 		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -51,7 +54,5 @@ Global
 		GlobalSection(MonoDevelopProperties) = preSolution
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
+
 EndGlobal

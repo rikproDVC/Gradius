@@ -18,22 +18,24 @@ public class RegularEnemy: MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (MyTransform.position.x < -20)
-		{
-			Destroy(this.gameObject);
-		}
-
-		if (Health <= 0)
-		{
-			Player.PlayerScore += 100;
-			if(Random.Range(1, 25) == 1)
-			{
+        if (Health < 1)
+        {
+            Player.PlayerScore += 100;
+            if(Random.Range(1, 25) == 1)
+            {
                 Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);
-			}
-			Destroy(this.gameObject);
-		}
+            }
+            Destroy(this.gameObject);
+        }
+       
+        if (!renderer.IsVisibleFrom(Camera.main))
+        {
+            Destroy(this.gameObject);
+        }
 	}
+
+
 
 	// Collision detector for Player
 	void OnCollisionEnter2D(Collision2D other)
