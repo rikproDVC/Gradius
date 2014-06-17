@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour {
 	{
 		myTransform.Translate(Vector3.right * Speed * Time.deltaTime);
 
-		if (myTransform.position.x > 15)
+		if (myTransform.position.x > 19)
 		{
 			Destroy(this.gameObject);
 		}

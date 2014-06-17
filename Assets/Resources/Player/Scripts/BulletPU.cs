@@ -14,7 +14,7 @@ public class BulletPU : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		myTransform = transform;
+        myTransform = transform;
 	}
 	
 	// Update is called once per frame
