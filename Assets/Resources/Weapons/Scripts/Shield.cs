@@ -25,4 +25,13 @@ public class Shield : MonoBehaviour {
             Destroy(this.gameObject);
         }
 	}
+
+    // Collision with enemy
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.transform.tag == "Enemy")
+        {
+            Player.Shield -= 1;
+        }
+    }
 }

@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	public static int PowerLevel = 0;
     public static int PlayerScore = 0;
     public static int PlayerLives = 3;
-    public static int Shield = 1;
+    public static int Shield = 4;
     public static bool ShieldActive = false;
     public static Vector3 PlayerPositionLaser;
     public static Vector3 PlayerPositionShield;

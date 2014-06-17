@@ -2,12 +2,20 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\BulletPU.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Player\Scripts\LaserPU.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="6" Column="30" />
       <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\myGUI\Scripts\myGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Player\Scripts\BulletPU.cs" Line="6" Column="34" />
+=======
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="26" Column="19" />
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="28" Column="2" />
+      <File FileName="Assets\Resources\Player\Scripts\BulletPU.cs" Line="60" Column="71" />
+>>>>>>> b430aa59f3fabd0737ecf7b9b92121b84c20ce54
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

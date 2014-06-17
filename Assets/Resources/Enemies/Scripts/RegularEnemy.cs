@@ -26,7 +26,7 @@ public class RegularEnemy: MonoBehaviour
 		if (Health <= 0)
 		{
 			Player.PlayerScore += 100;
-			if(Random.Range(1, 25) == 1)
+			if(Random.Range(1, 5) == 1)
 			{
                 Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);
