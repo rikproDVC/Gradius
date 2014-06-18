@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}</ProjectGuid>
+	<ProjectGuid>{9DADAE09-38F7-54C2-A028-C36218DFF738}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Resources\Enemies\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemy.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Resources\Player\Scripts\Player.cs" />
      <Compile Include="Assets\Resources\Player\Scripts\RocketPU.cs" />
      <Compile Include="Assets\Resources\PowerUps\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Resources\Sounds\Scripts\BulletAudio.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
