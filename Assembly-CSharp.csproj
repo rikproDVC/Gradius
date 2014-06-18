@@ -62,6 +62,7 @@
      <Compile Include="Assets\Resources\Player\Scripts\Player.cs" />
      <Compile Include="Assets\Resources\Player\Scripts\RocketPU.cs" />
      <Compile Include="Assets\Resources\PowerUps\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Resources\Sounds\Scripts\BulletAudio.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Bullet.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Laser.cs" />
      <Compile Include="Assets\Resources\Weapons\Scripts\Rocket.cs" />
