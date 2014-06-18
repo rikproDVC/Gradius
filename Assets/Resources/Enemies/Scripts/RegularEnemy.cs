@@ -5,7 +5,9 @@ public class RegularEnemy: MonoBehaviour
 {
 	public static float enemySpeed = 3;
     public GameObject PowerUpFab;
+    public GameObject ExplosionFab;
 
+    private Vector3 position;
 	private int Health = 12;
 	private Transform MyTransform;
 	
@@ -28,7 +30,7 @@ public class RegularEnemy: MonoBehaviour
 			Player.PlayerScore += 100;
 			if(Random.Range(1, 5) == 1)
 			{
-                Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);
 			}
 			Destroy(this.gameObject);
