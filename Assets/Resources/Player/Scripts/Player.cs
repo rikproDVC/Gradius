@@ -48,9 +48,9 @@ public class Player : MonoBehaviour {
 			myTransform.position.z
         );
 
-        //PlayerPosition used for Laser
+        //PlayerPosition used for Laser + shield
         PlayerPositionLaser = new Vector3 (myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
-        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z);
+        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z - 1);
 
         //Shield
         if (Shield > 0 && ShieldActive == false) {

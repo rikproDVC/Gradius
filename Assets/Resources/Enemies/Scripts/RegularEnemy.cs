@@ -8,12 +8,8 @@ public class RegularEnemy: MonoBehaviour
     public GameObject ExplosionFab;
 
     private Vector3 position;
-<<<<<<< HEAD
 	private int Health = 4;
 	private Transform MyTransform;
-=======
-	private int Health = 2;
->>>>>>> e02682a2534dce4d71724adbaa92d7957ae473b9
 	private float enemySpeed = EnemySpawn.enemySpeed;
 	
 	// Use this for initialization
@@ -69,15 +65,21 @@ public class RegularEnemy: MonoBehaviour
 		}
 
 		//... with Explosion
-//		if(other.transform.tag == "Explosion")
-//		{
-//			Health -= Rocket.AreaDamage;
-//		}
+		if(other.transform.tag == "Explosion")
+		{
+			Health -= Rocket.AreaDamage;
+		}
 
 		//... with Laser
 //		if(other.transform.tag == "Laser")
 //		{
 //			Health -= Laser.Damage;
 //		}
+
+        //... with Shield
+        if(other.transform.tag == "Shield")
+        {
+          Health = 0;
+        }
 	}
 }
