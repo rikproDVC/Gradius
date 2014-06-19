@@ -5,7 +5,9 @@ public class Rocket : MonoBehaviour
 {
 	public static int ImpactDamage = 2;
 	public static int AreaDamage = 2;
+    public GameObject ExplosionFab;
 
+    private Vector3 Position;
 	private Transform myTransform;
 	private int Speed = 7;
 
@@ -31,7 +33,8 @@ public class Rocket : MonoBehaviour
 	{
 		if(other.transform.tag == "Enemy")
 		{
-			//SPAWN EXPLOSION !!!!!
+            Position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
+            Instantiate(ExplosionFab, Position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}
 	}

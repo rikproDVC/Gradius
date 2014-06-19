@@ -17,14 +17,6 @@ public class Spawn : MonoBehaviour {
 
     public void Awake ()
     {
-        if (Meteorite.tag == "Meteorite")
-        {
-            Delay = 2f;
-        }
-        if (Meteorite.tag == "Enemy")
-        {
-            Delay = 4f;
-        }
     	InvokeRepeating ("spawn", 0, Delay);
     }
 
@@ -32,7 +24,7 @@ public class Spawn : MonoBehaviour {
     {
     	if (Meteorite.tag == "Meteorite")
         {
-            position =new Vector3 (23, Random.Range(YMin,YMax) ,5);
+    		position =new Vector3 (23, Random.Range(YMin,YMax) ,5);
     		Instantiate (Meteorite,position,Quaternion.identity);
     	}
     	if (Meteorite.tag == "Enemy")

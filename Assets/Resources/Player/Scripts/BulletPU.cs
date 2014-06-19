@@ -5,6 +5,7 @@ public class BulletPU : MonoBehaviour {
 
 	public static int PowerLevel = 0;
 	public GameObject BulletFab;
+    public GameObject BulletAudioFab;
 
 	private Transform myTransform;
 	private float ROF;
@@ -14,7 +15,7 @@ public class BulletPU : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		myTransform = transform;
+        myTransform = transform;
 	}
 	
 	// Update is called once per frame
@@ -52,6 +53,7 @@ public class BulletPU : MonoBehaviour {
 				{
 					position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y, myTransform.position.z);
 					Instantiate(BulletFab, position, Quaternion.identity);
+                    Instantiate(BulletAudioFab, position, Quaternion.identity);
 				}
 				if(PowerLevel >= 1)
 				{

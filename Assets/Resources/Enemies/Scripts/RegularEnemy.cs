@@ -3,29 +3,24 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-	public static float enemySpeed = 3;
+	private Transform myTransform;
     public GameObject PowerUpFab;
+    public GameObject ExplosionFab;
 
-<<<<<<< HEAD
     private Vector3 position;
 	private int Health = 12;
 	private Transform MyTransform;
 	private float enemySpeed = EnemySpawn.enemySpeed;
-=======
-	private int Health = 12;
-	private Transform MyTransform;
->>>>>>> 2b3b102f9021b524f017fff331b029eb21cc87f1
 	
 	// Use this for initialization
 	void Start()
 	{
-		MyTransform = transform;
+		myTransform = transform;
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-<<<<<<< HEAD
 		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
 		if (myTransform.position.x < -20)
 		{
@@ -38,26 +33,11 @@ public class RegularEnemy: MonoBehaviour
 			if(Random.Range(1, 5) == 1)
 			{
                 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
-=======
-        if (Health < 1)
-        {
-            Player.PlayerScore += 100;
-            if(Random.Range(1, 25) == 1)
-            {
-                Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
->>>>>>> 2b3b102f9021b524f017fff331b029eb21cc87f1
                 Instantiate(PowerUpFab, position, Quaternion.identity);
-            }
-            Destroy(this.gameObject);
-        }
-       
-        if (!renderer.IsVisibleFrom(Camera.main))
-        {
-            Destroy(this.gameObject);
-        }
+			}
+			Destroy(this.gameObject);
+		}
 	}
-
-
 
 	// Collision detector for Player
 	void OnCollisionEnter2D(Collision2D other)

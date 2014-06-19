@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PowerUp : MonoBehaviour {
 
-	private string[] TypeArray = new string[7] {"Bullet", "Rocket", "Laser", "PlayerSpeed", "PlayerLive", "RocketAmmo", "Shield"};
+    private string[] TypeArray = new string[12] {"Bullet", "Rocket", "Laser", "PlayerSpeed", "PlayerLive", "PlayerLive", "RocketAmmo", "RocketAmmo", "RocketAmmo", "Shield", "Shield", "Shield"};
     private int TypeNum;
 	public string Type;
     private int Speed = 5;
@@ -12,7 +12,7 @@ public class PowerUp : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-        TypeNum = Random.Range(0, 7);
+        TypeNum = Random.Range(0, 12);
 		Type = TypeArray[TypeNum];
         myTransform = transform;
 	}
@@ -54,7 +54,7 @@ public class PowerUp : MonoBehaviour {
             }
             if (Type == "Shield")
             {
-                 Player.Shield += 1;
+                Player.Shield += 1;
             }
 
 			Player.PlayerScore += 50;
