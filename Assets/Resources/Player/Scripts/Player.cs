@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
         var leftBorder = Camera.main.ViewportToWorldPoint (
 			new Vector3 (0, 0, dist)
         ).x;
+     
 		
         var rightBorder = Camera.main.ViewportToWorldPoint (
 			new Vector3 (1, 0, dist)
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour {
 			new Vector3 (0, 1, dist)
         ).y;
 		
+      
         transform.position = new Vector3 (
 			Mathf.Clamp (myTransform.position.x, leftBorder, rightBorder),
 			Mathf.Clamp (myTransform.position.y, topBorder, bottomBorder),
