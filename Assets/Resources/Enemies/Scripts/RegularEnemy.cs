@@ -8,7 +8,7 @@ public class RegularEnemy: MonoBehaviour
     public GameObject ExplosionFab;
 
     private Vector3 position;
-	private int Health = 12;
+	private int Health = 4;
 	private Transform MyTransform;
 	private float enemySpeed = EnemySpawn.enemySpeed;
 	
