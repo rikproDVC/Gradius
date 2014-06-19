@@ -3,22 +3,28 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-	public static float enemySpeed = 3;
+	private Transform myTransform;
     public GameObject PowerUpFab;
+    public GameObject ExplosionFab;
 
-	private int Health = 12;
+    private Vector3 position;
 	private Transform MyTransform;
+
+	private float enemySpeed = EnemySpawn.enemySpeed;
+	private int Health = 4;
+
 	
 	// Use this for initialization
 	void Start()
 	{
-		MyTransform = transform;
+		myTransform = transform;
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		if (MyTransform.position.x < -20)
+		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
+		if (myTransform.position.x < -20)
 		{
 			Destroy(this.gameObject);
 		}
@@ -28,7 +34,7 @@ public class RegularEnemy: MonoBehaviour
 			Player.PlayerScore += 100;
 			if(Random.Range(1, 5) == 1)
 			{
-                Vector3 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);
 			}
 			Destroy(this.gameObject);

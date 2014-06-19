@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 411853a967491cc43a182067876fed0e
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - RocketFab: {fileID: 100002, guid: 88ddf1031e0600e4e955a89bf4dd9bcf, type: 2}
+  - RocketAudioFab: {fileID: 100000, guid: c25fe0784b7eee8408007723d025d153, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

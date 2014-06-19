@@ -3,62 +3,68 @@ using System.Collections;
 
 public class RegularEnemyPathReader : MonoBehaviour {
 	private Transform myTransform;
-
-	//set variables for movement
+	
+	//set variables for individual path keypoints
 	public float angle;
+	public float rotationSpeed;
+	public Vector3 rotation;
 	public float xMarker;
 	public float yMarker;
-
+	
+	//set variables for determining path keypoints
 	private bool newUpdate;
-	private int pathNumber = 0;
 	private float nullPath = 361;
-
+	private int pathNumber = 0;
+	
+	//make arrays for the path keypoints
 	private float[] angles;
+	private float[] rotationSpeeds;
+	private string[] rotations;
 	private float[] xMarkers;
 	private float[] yMarkers;
-
-
+	
 	// Use this for initialization
 	void Start () {
+		//cache transform
 		myTransform = transform;
-
-		angles = new float[] {45, 135, 45, 135, 45, 135};
-		xMarkers = new float[] {nullPath, nullPath, nullPath, nullPath, nullPath, nullPath};
-		yMarkers = new float[] {2, -3, 2, -3, 2, -3};
-
-		//set the angle the enemy has to travel at
+		
+		//fill the arrays with path keypoints
+		angles = EnemySpawn.angles;
+		rotations = EnemySpawn.rotations;
+		xMarkers = EnemySpawn.xMarkers;
+		yMarkers = EnemySpawn.yMarkers;
+		rotationSpeeds = EnemySpawn.rotationSpeeds;
+		
+		//ask for new update to path keypoints
 		newUpdate = true;
 	}
 	
 	void Update()
 	{
+		//make the ship move
+		//IF the ship does not need an update to path keypoints, do movement, ELSE ask for new path keypoints
 		if (!newUpdate)
 		{
-			//make the ship move to ENDMARKER x or y
+			//make the ship move to path keypoint
+			//IF the ship is at the correct x or y coordinate, ask for new update, ELSE move forward
 			if (myTransform.position.x < xMarker + 0.5f && myTransform.position.x > xMarker - 0.5f || 
-			myTransform.position.y < yMarker + 0.5f && myTransform.position.y > yMarker - 0.5f)
+			    myTransform.position.y < yMarker + 0.5f && myTransform.position.y > yMarker - 0.5f)
 			{
 				newUpdate = true;
 			}
-			else
-			{
-				myTransform.Translate (Vector3.up * RegularEnemy.enemySpeed * Time.deltaTime);
-			}
 			//make the ship rotate to ANGLE degrees
-			if (!(myTransform.rotation.eulerAngles.z < angle + 1f && myTransform.rotation.eulerAngles.z > angle - 1f))
+			//IF the ship does not need to rotate (nullPath = 361), ELSE rotate the ship to desired rotation in desired ROTATION
+			if (angle == 361)
+			{}
+			else if (!(myTransform.rotation.eulerAngles.z < angle + 2f && myTransform.rotation.eulerAngles.z > angle - 2f))
 			{
-				if (myTransform.rotation.eulerAngles.z < angle)
-				{
-					myTransform.Rotate(Vector3.forward * 270 * Time.deltaTime);
-				}
-				else if (myTransform.rotation.eulerAngles.z > angle)
-				{
-					myTransform.Rotate(Vector3.back * 270 * Time.deltaTime);
-				}
+				myTransform.Rotate(rotation * rotationSpeed * Time.deltaTime);
 			}
 		}
 		else
 		{
+			//ask for new path keypoints
+			//IF the array for pathfinding has ran out, go 90 degrees straight forward, ELSE get new path keypoints
 			if (angles.Length <= pathNumber)
 			{
 				angle = 90;
@@ -68,9 +74,18 @@ public class RegularEnemyPathReader : MonoBehaviour {
 			}
 			else
 			{
+				if (rotations[pathNumber] == "left")
+				{
+					rotation = Vector3.forward;
+				}
+				else if (rotations[pathNumber] == "right")
+				{
+					rotation = Vector3.back;
+				}
 				angle = angles[pathNumber];
 				xMarker = xMarkers[pathNumber];
 				yMarker = yMarkers[pathNumber];
+				rotationSpeed = rotationSpeeds[pathNumber];
 				pathNumber += 1;
 				newUpdate = false;
 			}
