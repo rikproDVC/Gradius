@@ -8,8 +8,12 @@ public class RegularEnemy: MonoBehaviour
     public GameObject ExplosionFab;
 
     private Vector3 position;
+<<<<<<< HEAD
 	private int Health = 4;
 	private Transform MyTransform;
+=======
+	private int Health = 2;
+>>>>>>> e02682a2534dce4d71724adbaa92d7957ae473b9
 	private float enemySpeed = EnemySpawn.enemySpeed;
 	
 	// Use this for initialization
@@ -22,7 +26,7 @@ public class RegularEnemy: MonoBehaviour
 	void Update()
 	{
 		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
-		if (myTransform.position.x < -20)
+        if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
 		{
 			Destroy(this.gameObject);
 		}
@@ -32,7 +36,7 @@ public class RegularEnemy: MonoBehaviour
 			Player.PlayerScore += 100;
 			if(Random.Range(1, 5) == 1)
 			{
-                position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);
 			}
 			Destroy(this.gameObject);

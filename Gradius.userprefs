@@ -1,8 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\RegularEnemy.cs">
     <Files>
       <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="30" Column="19" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\EnemySpawn.cs">
+    <Files>
+      <File FileName="Assets\Resources\Enemies\Scripts\EnemySpawn.cs" Line="125" Column="45" />
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="24" Column="104" />
+      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="33" Column="85" />
+>>>>>>> e02682a2534dce4d71724adbaa92d7957ae473b9
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
