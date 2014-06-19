@@ -4,6 +4,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - PowerUpFab: {fileID: 100000, guid: eb88b0b1869de5a4cb94fa840ce5e06a, type: 2}
+  - ExplosionFab: {fileID: 100000, guid: 85f99adaa7ea191459b6c139b3e134ff, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

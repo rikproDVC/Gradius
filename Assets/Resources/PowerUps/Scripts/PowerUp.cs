@@ -20,6 +20,10 @@ public class PowerUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+        if (!renderer.IsVisibleFrom(Camera.main))
+        {
+            Destroy(this.gameObject);
+        }
         myTransform.Translate(Vector3.left * Speed * Time.deltaTime);
 	}
 
