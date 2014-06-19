@@ -55,6 +55,7 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\General.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Meteorite.cs" />
+     <Compile Include="Assets\Resources\Levels\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Platformspawn.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Scroll.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Spawn.cs" />
