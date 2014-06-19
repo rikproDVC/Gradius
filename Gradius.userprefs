@@ -1,33 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\RegularEnemy.cs">
-    <Files>
-      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="80" Column="42" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Explosion.cs" Line="20" Column="10" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Shield.cs" Line="34" Column="32" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="53" Column="119" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Levels\Scripts\Spawn.cs">
-    <Files>
-      <File FileName="Assets\Resources\Levels\Scripts\Spawn.cs" Line="8" Column="29" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\RegularEnemy.cs">
-    <Files>
-      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="30" Column="19" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\EnemySpawn.cs">
-    <Files>
-      <File FileName="Assets\Resources\Enemies\Scripts\EnemySpawn.cs" Line="125" Column="45" />
-      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="24" Column="104" />
-      <File FileName="Assets\Resources\Levels\Scripts\General.cs" Line="33" Column="85" />
->>>>>>> e02682a2534dce4d71724adbaa92d7957ae473b9
->>>>>>> d1ebb38174dc4f5e4baeac74a2110d2f69c0df6a
->>>>>>> 407ce7f2e56c5d545db04f8d409b2b38ef985d74
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

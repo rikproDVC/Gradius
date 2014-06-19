@@ -8,22 +8,7 @@ public class RegularEnemy: MonoBehaviour
     public GameObject ExplosionFab;
 
     private Vector3 position;
-<<<<<<< HEAD
 	private int Health = 4;
-	private Transform MyTransform;
-=======
-<<<<<<< HEAD
-	private int Health = 2;
-
-=======
-<<<<<<< HEAD
-	private int Health = 4;
-	private Transform MyTransform;
-=======
-	private int Health = 2;
->>>>>>> e02682a2534dce4d71724adbaa92d7957ae473b9
->>>>>>> d1ebb38174dc4f5e4baeac74a2110d2f69c0df6a
->>>>>>> 407ce7f2e56c5d545db04f8d409b2b38ef985d74
 	private float enemySpeed = EnemySpawn.enemySpeed;
 	
 	// Use this for initialization
@@ -36,17 +21,10 @@ public class RegularEnemy: MonoBehaviour
 	void Update()
 	{
 		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
-<<<<<<< HEAD
-        if (myTransform.position.x < -20)
-        {
-            Destroy(this.gameObject);
-        }
-=======
         if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
 		{
 			Destroy(this.gameObject);
 		}
->>>>>>> d1ebb38174dc4f5e4baeac74a2110d2f69c0df6a
 
 		if (Health <= 0)
 		{
@@ -55,11 +33,7 @@ public class RegularEnemy: MonoBehaviour
                                        
 			if(Random.Range(1, 5) == 1)
 			{
-<<<<<<< HEAD
-                position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);   
-=======
                 position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
->>>>>>> d1ebb38174dc4f5e4baeac74a2110d2f69c0df6a
                 Instantiate(PowerUpFab, position, Quaternion.identity);
 			}
 			Destroy(this.gameObject);
@@ -104,9 +78,16 @@ public class RegularEnemy: MonoBehaviour
 //		}
 
         //... with Shield
-        if(other.transform.tag == "Shield")
+        if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
-          Health = 0;
+            Health = 0;
+        }
+
+        //... with Player
+        if(other.transform.tag == "Player" && Player.ShieldActive == false)
+        {
+            Player.PlayerLives -= 1;
+            Health = 0;
         }
 	}
 }

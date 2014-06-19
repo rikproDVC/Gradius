@@ -40,30 +40,7 @@ public class Player : MonoBehaviour {
 
         //Move the player left and right
         myTransform.Translate (Vector3.right * Speed * Input.GetAxis ("Horizontal") * Time.deltaTime);
-        myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);
-<<<<<<< HEAD
-
-        var dist = (transform.position - Camera.main.transform.position).z;
-		
-        var leftBorder = Camera.main.ViewportToWorldPoint (
-			new Vector3 (0, 0, dist)
-        ).x;
-     
-		
-        var rightBorder = Camera.main.ViewportToWorldPoint (
-			new Vector3 (1, 0, dist)
-        ).x;
-		
-        var topBorder = Camera.main.ViewportToWorldPoint (
-			new Vector3 (0, 0, dist)
-        ).y;
-		
-        var bottomBorder = Camera.main.ViewportToWorldPoint (
-			new Vector3 (0, 1, dist)
-        ).y;
-=======
->>>>>>> d1ebb38174dc4f5e4baeac74a2110d2f69c0df6a
-		
+        myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);		
       
         transform.position = new Vector3 (
 			Mathf.Clamp (myTransform.position.x, General.leftBorder, General.rightBorder),
