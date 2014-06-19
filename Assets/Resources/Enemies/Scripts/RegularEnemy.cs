@@ -3,17 +3,22 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
+    //make variables for Gameobjects spawns; cache transform
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
 
-    private Vector3 position;
+    //make variables for enemy attributes
 	private int Health = 2;
 	private float enemySpeed = EnemySpawn.enemySpeed;
+
+    //make a vraible to get the enemy's position
+    private Vector3 position;
 	
 	// Use this for initialization
 	void Start()
 	{
+        //cache transform
 		myTransform = transform;
 	}
 	

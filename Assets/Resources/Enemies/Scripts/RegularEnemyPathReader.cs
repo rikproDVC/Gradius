@@ -12,8 +12,7 @@ public class RegularEnemyPathReader : MonoBehaviour {
 	public float yMarker;
 	
 	//set variables for determining path keypoints
-	private bool newUpdate;
-	private float nullPath = 361;
+    private bool newUpdate;
 	private int pathNumber = 0;
 	
 	//make arrays for the path keypoints
@@ -22,6 +21,7 @@ public class RegularEnemyPathReader : MonoBehaviour {
 	private string[] rotations;
 	private float[] xMarkers;
 	private float[] yMarkers;
+    private float nullPath = 361;
 	
 	// Use this for initialization
 	void Start () {
