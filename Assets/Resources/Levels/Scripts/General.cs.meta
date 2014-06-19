@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 530810d1fe8be104cb56349d7b35c4b4
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PlayerFab: {fileID: 100002, guid: b8a8b5c5d9b97e340b232cfc1b5f4666, type: 2}
+  - RegularEnemyFab: {fileID: 100000, guid: 2e2bf3c85a28e444083e611d463b8bdc, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
