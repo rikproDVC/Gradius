@@ -22,7 +22,7 @@ public class Laser : MonoBehaviour {
 	void Update()
 	{
 		//Laser position in relation to player position
-		Position = Player.PlayerPositionLaser;
+		Position = Player.PlayerPosition;
 		myTransform.position = Position;
 
 		//Consume charge

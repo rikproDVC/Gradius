@@ -11,13 +11,13 @@ public class Meteorite : MonoBehaviour {
 	{
 		MyTransform = transform;	
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
         MyTransform.Translate (Vector3.left * Speed * Time.deltaTime);
 
-		if (MyTransform.position.x < -30)
+        if (!renderer.IsVisibleFrom(Camera.main))
 		{
 			DestroyObject(this.gameObject);
 		}
