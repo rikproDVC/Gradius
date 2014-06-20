@@ -23,6 +23,10 @@ public class Bullet : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
+        if (!renderer.IsVisibleFrom(Camera.main))
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
 	// Collision with enemy

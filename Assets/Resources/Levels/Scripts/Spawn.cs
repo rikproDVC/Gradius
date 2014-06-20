@@ -29,7 +29,7 @@ public class Spawn : MonoBehaviour {
     	}
     	if (Meteorite.tag == "Enemy")
         {
-    		position =new Vector3 (23, Random.Range(YMin,YMax) ,1);
+    		position =new Vector3 (22, Random.Range(YMin,YMax) ,1);
     		Instantiate (Meteorite,position,Quaternion.Euler (0, 0, -90));
     	}
     }

@@ -40,17 +40,17 @@ public class Player : MonoBehaviour {
 
         //Move the player left and right
         myTransform.Translate (Vector3.right * Speed * Input.GetAxis ("Horizontal") * Time.deltaTime);
-        myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);
-		
+        myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);		
+      
         transform.position = new Vector3 (
 			Mathf.Clamp (myTransform.position.x, General.leftBorder, General.rightBorder),
 			Mathf.Clamp (myTransform.position.y, General.bottomBorder, General.topBorder),
 			myTransform.position.z
         );
 
-        //PlayerPosition used for Laser
+        //PlayerPosition used for Laser + shield
         PlayerPositionLaser = new Vector3 (myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
-        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z);
+        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z - 1);
 
         //Shield
         if (Shield > 0 && ShieldActive == false) {

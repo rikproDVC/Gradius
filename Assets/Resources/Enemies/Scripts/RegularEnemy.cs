@@ -10,6 +10,7 @@ public class RegularEnemy: MonoBehaviour
 
     //make variables for enemy attributes
 	private int Health = 2;
+    private Vector3 position;
 	private float enemySpeed = EnemySpawn.enemySpeed;
 
     //make a vraible to get the enemy's position
@@ -34,6 +35,8 @@ public class RegularEnemy: MonoBehaviour
 		if (Health <= 0)
 		{
 			Player.PlayerScore += 100;
+            position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);   
+                                       
 			if(Random.Range(1, 5) == 1)
 			{
                 position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
@@ -69,15 +72,28 @@ public class RegularEnemy: MonoBehaviour
 		}
 
 		//... with Explosion
-//		if(other.transform.tag == "Explosion")
-//		{
-//			Health -= Rocket.AreaDamage;
-//		}
+		if(other.transform.tag == "Explosion")
+		{
+			Health -= Rocket.AreaDamage;
+		}
 
 		//... with Laser
 //		if(other.transform.tag == "Laser")
 //		{
 //			Health -= Laser.Damage;
 //		}
+
+        //... with Shield
+        if(other.transform.tag == "Shield" && Player.ShieldActive == true)
+        {
+            Health = 0;
+        }
+
+        //... with Player
+        if(other.transform.tag == "Player" && Player.ShieldActive == false)
+        {
+            Player.PlayerLives -= 1;
+            Health = 0;
+        }
 	}
 }
