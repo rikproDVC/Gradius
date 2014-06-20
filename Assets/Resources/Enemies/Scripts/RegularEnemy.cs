@@ -7,10 +7,7 @@ public class RegularEnemy: MonoBehaviour
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-
     private Vector3 position;
-
-	private Transform MyTransform;
 
 
 
@@ -52,7 +49,7 @@ public class RegularEnemy: MonoBehaviour
 			{
 
 
-                position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
+                position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
               
 
                 position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
