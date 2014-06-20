@@ -12,9 +12,6 @@ public class RegularEnemy: MonoBehaviour
 	private int Health = 2;
     private Vector3 position;
 	private float enemySpeed = EnemySpawn.enemySpeed;
-
-    //make a vraible to get the enemy's position
-    private Vector3 position;
 	
 	// Use this for initialization
 	void Start()
