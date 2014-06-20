@@ -32,9 +32,8 @@ public class RegularEnemy: MonoBehaviour
 		if (Health <= 0)
 		{
 			Player.PlayerScore += 100;
-            position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);   
                                        
-			if(Random.Range(1, 5) == 1)
+			if(Random.Range(1, 15) == 1)
 			{
                 position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
                 Instantiate(PowerUpFab, position, Quaternion.identity);

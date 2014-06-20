@@ -8,7 +8,7 @@ public class BulletPU : MonoBehaviour {
     public GameObject BulletAudioFab;
 
 	private Transform myTransform;
-	private float ROF;
+	private float ROF = 0.5f;
 	private float Timer = 0f;
 	private Vector3 position;
 
@@ -24,28 +24,6 @@ public class BulletPU : MonoBehaviour {
 		//Shoot Bullet
 		if(Input.GetKey("space"))
 		{
-			//ROF
-			if(PowerLevel == 0)
-			{
-				ROF = 1f;
-			}
-			if(PowerLevel == 1)
-			{
-				ROF = 0.9f;
-			}
-			if(PowerLevel == 2)
-			{
-				ROF = 0.8f;
-			}
-			if(PowerLevel == 3)
-			{
-				ROF = 0.7f;
-			}
-			if(PowerLevel == 4)
-			{
-				ROF = 0.6f;
-			}
-
 			//PowerUp
 			if(Time.time - Timer > ROF)
 			{
