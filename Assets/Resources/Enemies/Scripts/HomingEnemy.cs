@@ -9,7 +9,7 @@ public class HomingEnemy : MonoBehaviour {
     
     //make variables for enemy attributes
     private int Health = 2;
-    private float enemySpeed = 7;
+    private float enemySpeed = 3;
     private float timer;
     
     //make a vraible to get the enemy's position

@@ -16,6 +16,8 @@ public class EnemySpawn : MonoBehaviour {
     public static float[] yMarkers;
     private float nullPath = 361;
 
+    public Vector3 playerPosition;
+
     //make variables for stages
     private int stages;
     public static int stage;
@@ -39,11 +41,13 @@ public class EnemySpawn : MonoBehaviour {
         endWaveActive = false;
         stages = 5;
         stage = 1;
-        waveNumberInStage = 3;
-	}
+        waveNumberInStage = 0;
+    }
 
 	void Update()
     {
+        playerPosition = Player.PlayerPositionShield;
+
         //start making stages
         if (stage == 1)
         {
@@ -55,7 +59,7 @@ public class EnemySpawn : MonoBehaviour {
                 endWave();
             }
         }
-        if (stage == 2)
+        else if (stage == 2)
         {
             stageLength = 4;
             if (waveNumberInStage > stageLength)
@@ -65,9 +69,40 @@ public class EnemySpawn : MonoBehaviour {
                 endWave();
             }
         }
-        if (stage == 3)
+        else if (stage == 3)
         {
             stageLength = 2;
+            if (waveNumberInStage > stageLength)
+            {
+                endWaveActive = true;
+                complete = false;
+                endWave();
+            }
+        }
+
+        else if (stage == 4)
+        {
+            stageLength = 5;
+            if (waveNumberInStage > stageLength)
+            {
+                endWaveActive = true;
+                complete = false;
+                endWave();
+            }
+        }
+        else if (stage == 4)
+        {
+            stageLength = 7;
+            if (waveNumberInStage > stageLength)
+            {
+                endWaveActive = true;
+                complete = false;
+                endWave();
+            }
+        }
+        else if (stage == 5)
+        {
+            stageLength = 4;
             if (waveNumberInStage > stageLength)
             {
                 endWaveActive = true;
@@ -176,7 +211,7 @@ public class EnemySpawn : MonoBehaviour {
 				angles = new float[] {55, 110};
 				rotations = new string[] {"right", "left"};
 				xMarkers = new float[] {nullPath, -20};
-				yMarkers = new float[] {2, nullPath};
+				yMarkers = new float[] {4, nullPath};
 				rotationSpeeds = new float[] {180, 180};
 
                 position = new Vector3(General.rightBorder, -7, 1);
@@ -190,7 +225,7 @@ public class EnemySpawn : MonoBehaviour {
 				angles = new float[] {145, 70};
 				rotations = new string[] {"left", "right"};
 				xMarkers = new float[] {nullPath, -20};
-				yMarkers = new float[] {-2, nullPath};
+				yMarkers = new float[] {-4, nullPath};
 				rotationSpeeds = new float[] {180, 180};
 				
                 position = new Vector3(General.rightBorder, 7, 1);
@@ -281,6 +316,90 @@ public class EnemySpawn : MonoBehaviour {
         }
     }
 
+    private void wave4()
+    {
+        length = 5;
+        if (i < length && Time.time - spawnTimer > 0.3) {
+            if (order == 0)
+            {
+                //fill the arrays with path keypoints
+                enemySpeed = 7;
+                angles = new float[] {89};
+                rotations = new string[] {"right", "left"};
+                xMarkers = new float[] {General.leftBorder};
+                yMarkers = new float[] {nullPath};
+                rotationSpeeds = new float[] {180, 180};
+                
+                position = new Vector3(General.rightBorder, 0, 1);
+                Instantiate (RegularEnemy, position, Quaternion.Euler(0, 0, 90));
+                spawnTimer = Time.time;
+                i++;
+            }
+            else if (order == 1) {
+                //fill the arrays with path keypoints
+                enemySpeed = 7;
+                angles = new float[] {145, 70};
+                rotations = new string[] {"left", "right"};
+                xMarkers = new float[] {nullPath, -20};
+                yMarkers = new float[] {-4, nullPath};
+                rotationSpeeds = new float[] {180, 180};
+                
+                position = new Vector3(General.rightBorder, 7, 1);
+                Instantiate (RegularEnemy, position, Quaternion.Euler(0, 0, 90));
+                spawnTimer = Time.time;
+                i++;
+            }
+            else if (order == 2) {
+                //fill the arrays with path keypoints
+                enemySpeed = 7;
+                angles = new float[] {145, 70};
+                rotations = new string[] {"left", "right"};
+                xMarkers = new float[] {nullPath, -20};
+                yMarkers = new float[] {-4, nullPath};
+                rotationSpeeds = new float[] {180, 180};
+                
+                position = new Vector3(General.rightBorder, 7, 1);
+                Instantiate (RegularEnemy, position, Quaternion.Euler(0, 0, 90));
+                spawnTimer = Time.time;
+                i++;
+            }
+            else if (order == 3) {
+                //fill the arrays with path keypoints
+                enemySpeed = 7;
+                angles = new float[] {145, 70};
+                rotations = new string[] {"left", "right"};
+                xMarkers = new float[] {nullPath, -20};
+                yMarkers = new float[] {-4, nullPath};
+                rotationSpeeds = new float[] {180, 180};
+                
+                position = new Vector3(General.rightBorder, 7, 1);
+                Instantiate (RegularEnemy, position, Quaternion.Euler(0, 0, 90));
+                spawnTimer = Time.time;
+                i++;
+            }
+            else if (order == 4) {
+                //fill the arrays with path keypoints
+                enemySpeed = 7;
+                angles = new float[] {145, 70};
+                rotations = new string[] {"left", "right"};
+                xMarkers = new float[] {nullPath, -20};
+                yMarkers = new float[] {-4, nullPath};
+                rotationSpeeds = new float[] {180, 180};
+                
+                position = new Vector3(General.rightBorder, 7, 1);
+                Instantiate (RegularEnemy, position, Quaternion.Euler(0, 0, 90));
+                spawnTimer = Time.time;
+                i++;
+            }
+            order++;
+            complete = false;
+        }
+        else if (i == length) 
+        {
+            complete = true;
+        }
+    }
+
     private void endWave ()
     {
         length = 4 * stage;
@@ -305,6 +424,7 @@ public class EnemySpawn : MonoBehaviour {
         {
             complete = true;
             endWaveActive = false;
+            waveNumberInStage = 0;
             stage++;
         }
     }
