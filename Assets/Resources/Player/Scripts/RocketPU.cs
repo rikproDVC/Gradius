@@ -6,6 +6,7 @@ public class RocketPU : MonoBehaviour {
     public static int PowerLevel = 0;
     public static int RocketAmmo = 10;
 	public GameObject RocketFab;
+    public GameObject RocketAudioFab;
 
 	private Transform myTransform;
 	private float ROF;
@@ -27,7 +28,7 @@ public class RocketPU : MonoBehaviour {
 			//ROF + Damage
 			if(PowerLevel == 0)
 			{
-				ROF = 1f;
+                ROF = 1f;
 			}
 			if(PowerLevel >= 1)
 			{
@@ -57,6 +58,7 @@ public class RocketPU : MonoBehaviour {
 				{
 					position = new Vector3(myTransform.position.x + 0.5f, myTransform.position.y, myTransform.position.z);
 					Instantiate(RocketFab, position, Quaternion.identity);
+                    Instantiate(RocketAudioFab, position, Quaternion.identity);
 				}
 				if(PowerLevel >= 1)
 				{

@@ -6,13 +6,14 @@ public class LaserPU : MonoBehaviour {
 	public static int PowerLevel = 0;
 	public static int LaserCharge = 100;
 	public GameObject LaserFab;
+    public GameObject LaserAudioFab;
 	public static float PauseTimer = 0f;
+    public static bool LaserActive = false;
 
 	private Transform myTransform;
 	private Vector3 position;
 	private float RechargeTimer = 0f;
 	private float RechargeRate = 1f;
-	private bool LaserActive = false;
 	
 	// Use this for initialization
 	void Start ()
@@ -36,6 +37,7 @@ public class LaserPU : MonoBehaviour {
 			{
 				Laser.ROF = 0.75f;
 				RechargeRate = 0.75f;
+                Instantiate(LaserAudioFab, position, Quaternion.identity);
 			}
 			if(PowerLevel >= 2)
 			{
