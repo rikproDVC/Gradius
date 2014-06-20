@@ -3,13 +3,18 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
+    //make variables for Gameobjects spawns; cache transform
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
+
     private Vector3 position;
 
 	private Transform MyTransform;
 
+
+
+    //make variables for enemy attributes
 	private float enemySpeed = EnemySpawn.enemySpeed;
 	private int Health = 2;
 
@@ -17,6 +22,7 @@ public class RegularEnemy: MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+        //cache transform
 		myTransform = transform;
 	}
 	
@@ -25,10 +31,12 @@ public class RegularEnemy: MonoBehaviour
 	{
 		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
 
+
         if (myTransform.position.x < -20)
         {
             Destroy(this.gameObject);
         }
+
 
         if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
 		{
@@ -44,8 +52,11 @@ public class RegularEnemy: MonoBehaviour
 			if(Random.Range(1, 5) == 1)
 			{
 
+
                 position = new Vector3(MyTransform.position.x, MyTransform.position.y, MyTransform.position.z);
               
+
+                position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
 
                 Instantiate(PowerUpFab, position, Quaternion.identity);
 			}
@@ -91,9 +102,16 @@ public class RegularEnemy: MonoBehaviour
 //		}
 
         //... with Shield
-        if(other.transform.tag == "Shield")
+        if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
-          Health = 0;
+            Health = 0;
+        }
+
+        //... with Player
+        if(other.transform.tag == "Player" && Player.ShieldActive == false)
+        {
+            Player.PlayerLives -= 1;
+            Health = 0;
         }
 	}
 }

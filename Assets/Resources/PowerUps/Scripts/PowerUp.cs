@@ -25,6 +25,11 @@ public class PowerUp : MonoBehaviour {
             Destroy(this.gameObject);
         }
         myTransform.Translate(Vector3.left * Speed * Time.deltaTime);
+
+        if (myTransform.position.x > General.rightBorder || myTransform.position.y < General.bottomBorder || myTransform.position.y > General.topBorder)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
 	// Collision Detector

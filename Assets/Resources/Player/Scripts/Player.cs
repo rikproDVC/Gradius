@@ -40,6 +40,7 @@ public class Player : MonoBehaviour {
 
         //Move the player left and right
         myTransform.Translate (Vector3.right * Speed * Input.GetAxis ("Horizontal") * Time.deltaTime);
+
         myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);
 
         var dist = (transform.position - Camera.main.transform.position).z;
@@ -62,10 +63,13 @@ public class Player : MonoBehaviour {
         ).y;
 
 		
+
+        myTransform.Translate (Vector3.up * Speed * Input.GetAxis ("Vertical") * Time.deltaTime);		
+
       
         transform.position = new Vector3 (
 			Mathf.Clamp (myTransform.position.x, General.leftBorder, General.rightBorder),
-			Mathf.Clamp (myTransform.position.y, General.topBorder, General.bottomBorder),
+			Mathf.Clamp (myTransform.position.y, General.bottomBorder, General.topBorder),
 			myTransform.position.z
         );
 

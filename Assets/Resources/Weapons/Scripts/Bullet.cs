@@ -19,6 +19,10 @@ public class Bullet : MonoBehaviour {
 	{
 		myTransform.Translate(Vector3.right * Speed * Time.deltaTime);
 
+        if (myTransform.position.x > General.rightBorder || myTransform.position.y < General.bottomBorder || myTransform.position.y > General.topBorder)
+		{
+			Destroy(this.gameObject);
+		}
         if (!renderer.IsVisibleFrom(Camera.main))
         {
             Destroy(this.gameObject);

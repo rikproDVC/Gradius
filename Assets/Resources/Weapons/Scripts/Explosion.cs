@@ -3,18 +3,18 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour {
 
-
+    private float Timer = 0f;
 
 	// Use this for initialization
 	void Start ()
     {
-	    
+        Timer = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update()
     {
-        if (!animation.IsPlaying("Explosion"))
+        if (Time.time - Timer > 2f)
         {
             Destroy(this.gameObject);
         }
