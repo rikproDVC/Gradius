@@ -28,8 +28,8 @@ public class General : MonoBehaviour {
         dist = (transform.position - Camera.main.transform.position).z;
         
         leftBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).x;
-        rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, dist)).x;        
-        topBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).y;        
-        bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 1, dist)).y;
+        rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, dist)).x;
+        topBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 1, dist)).y;
+        bottomBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).y;        
 	}
 }

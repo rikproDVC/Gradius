@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawn : MonoBehaviour {
     //make variables for spawning the enemy
     public GameObject RegularEnemy;
+    public GameObject HomingEnemy;
     private Vector3 position;
 
     //make arrays for enemy path keypoints
@@ -14,6 +15,13 @@ public class EnemySpawn : MonoBehaviour {
     public static float[] xMarkers;
     public static float[] yMarkers;
     private float nullPath = 361;
+
+    //make variables for stages
+    private int stages;
+    public static int stage;
+    private int stageLength;
+    private int waveNumberInStage;
+    private bool endWaveActive;
 
     //make variables for getting waves and wave numbers
     private int wave;
@@ -28,36 +36,75 @@ public class EnemySpawn : MonoBehaviour {
 
 	void Start ()
     {
-
+        endWaveActive = false;
+        stages = 5;
+        stage = 1;
+        waveNumberInStage = 3;
 	}
 
-	void Update ()
+	void Update()
     {
-		//get a wave number
-		//IF there has passed more than 10 seconds AND the last wave is COMPLETE, get a new random WAVE
-		if (Time.time - delay > 10 && complete == true) {
-			wave = Random.Range(1, 4);
-			complete = false;
-			delay = Time.time;
-            i = 0;
-            order = 0;
-		}
-		//trigger the waves
-		//IF the wave is not complete yet, trigger the wave
-		if (complete == false) {
-			if (wave == 1)
-			{
-				wave1();
-			}
-			else if (wave == 2)
-			{
-				wave2();
-			}
-            else if (wave == 3)
+        //start making stages
+        if (stage == 1)
+        {
+            stageLength = 3;
+            if (waveNumberInStage > stageLength)
             {
-                wave3();
+                endWaveActive = true;
+                complete = false;
+                endWave();
             }
-		}
+        }
+        if (stage == 2)
+        {
+            stageLength = 4;
+            if (waveNumberInStage > stageLength)
+            {
+                endWaveActive = true;
+                complete = false;
+                endWave();
+            }
+        }
+        if (stage == 3)
+        {
+            stageLength = 2;
+            if (waveNumberInStage > stageLength)
+            {
+                endWaveActive = true;
+                complete = false;
+                endWave();
+            }
+        }
+
+        if (endWaveActive == false)
+        {
+            //get a wave number
+            //IF there has passed more than 10 seconds AND the last wave is COMPLETE, get a new random WAVE
+            if (Time.time - delay > 10 && complete == true)
+            {
+                wave = Random.Range(1, 4);
+                complete = false;
+                delay = Time.time;
+                i = 0;
+                order = 0;
+                waveNumberInStage++;
+            }
+            //trigger the waves
+            //IF the wave is not complete yet, trigger the wave
+            if (complete == false)
+            {
+                if (wave == 1)
+                {
+                    wave1();
+                } else if (wave == 2)
+                {
+                    wave2();
+                } else if (wave == 3)
+                {
+                    wave3();
+                }
+            }
+        }
 	}
 
 	private void wave1 ()
@@ -231,6 +278,34 @@ public class EnemySpawn : MonoBehaviour {
         else if (i == length)
         {
             complete = true;
+        }
+    }
+
+    private void endWave ()
+    {
+        length = 4 * stage;
+        if (i < length && Time.time - spawnTimer > 0.4) {
+            if (order == 0 || order == 2 || order == 4 || order == 6 || order == 8 || order == 10)
+            {   
+                position = new Vector3(General.rightBorder, General.topBorder, 1);
+                Instantiate (HomingEnemy, position, Quaternion.Euler(0, 0, 135));
+                spawnTimer = Time.time;
+                i++;
+            }
+            else if (order == 1 || order == 3 || order == 5 || order == 7 || order == 9 || order == 11) {
+                position = new Vector3(General.rightBorder, General.bottomBorder, 1);
+                Instantiate (HomingEnemy, position, Quaternion.Euler(0, 0, 45));
+                spawnTimer = Time.time;
+                i++;
+            }
+            order++;
+            complete =  false;
+        }
+        else if (i == length) 
+        {
+            complete = true;
+            endWaveActive = false;
+            stage++;
         }
     }
 }

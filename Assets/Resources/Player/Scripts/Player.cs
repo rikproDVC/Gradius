@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
 		
         transform.position = new Vector3 (
 			Mathf.Clamp (myTransform.position.x, General.leftBorder, General.rightBorder),
-			Mathf.Clamp (myTransform.position.y, General.topBorder, General.bottomBorder),
+			Mathf.Clamp (myTransform.position.y, General.bottomBorder, General.topBorder),
 			myTransform.position.z
         );
 
