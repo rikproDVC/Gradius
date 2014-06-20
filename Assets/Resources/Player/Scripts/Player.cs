@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
         var leftBorder = Camera.main.ViewportToWorldPoint (
 			new Vector3 (0, 0, dist)
         ).x;
+     
 		
         var rightBorder = Camera.main.ViewportToWorldPoint (
 			new Vector3 (1, 0, dist)
@@ -59,16 +60,18 @@ public class Player : MonoBehaviour {
         var bottomBorder = Camera.main.ViewportToWorldPoint (
 			new Vector3 (0, 1, dist)
         ).y;
+
 		
+      
         transform.position = new Vector3 (
-			Mathf.Clamp (myTransform.position.x, leftBorder, rightBorder),
-			Mathf.Clamp (myTransform.position.y, topBorder, bottomBorder),
+			Mathf.Clamp (myTransform.position.x, General.leftBorder, General.rightBorder),
+			Mathf.Clamp (myTransform.position.y, General.topBorder, General.bottomBorder),
 			myTransform.position.z
         );
 
-        //PlayerPosition used for Laser
+        //PlayerPosition used for Laser + shield
         PlayerPositionLaser = new Vector3 (myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
-        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z);
+        PlayerPositionShield = new Vector3 (myTransform.position.x, myTransform.position.y, myTransform.position.z - 1);
 
         //Shield
         if (Shield > 0 && ShieldActive == false) {
@@ -76,5 +79,6 @@ public class Player : MonoBehaviour {
             Instantiate (ShieldFab, PlayerPositionShield, Quaternion.identity);
             ShieldActive = true;
         }
+
 	}
 }

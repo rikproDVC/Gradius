@@ -1,15 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Player\Scripts\LaserPU.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Enemies\Scripts\RegularEnemy.cs">
     <Files>
-      <File FileName="Assets\Resources\Sounds\Scripts\LaserAudio.cs" Line="21" Column="10" />
-      <File FileName="Assets\Resources\Sounds\Scripts\BulletAudio.cs" Line="16" Column="15" />
-      <File FileName="Assets\Resources\Player\Scripts\BulletPU.cs" Line="9" Column="1" />
-      <File FileName="Assets\Resources\Player\Scripts\LaserPU.cs" Line="61" Column="3" />
-      <File FileName="Assets\Resources\Weapons\Scripts\Bullet.cs" Line="22" Column="34" />
-      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="14" Column="24" />
-      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Player\Scripts\RocketPU.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Player\Scripts\Player.cs" Line="82" Column="9" />
+      <File FileName="Assets\Resources\Enemies\Scripts\EnemySpawn.cs" Line="70" Column="67" />
+      <File FileName="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" Line="60" Column="4" />
+      <File FileName="Assets\Resources\Player\Scripts\RocketPU.cs" Line="62" Column="5" />
+      <File FileName="Assets\Resources\Weapons\Scripts\Rocket.cs" Line="7" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

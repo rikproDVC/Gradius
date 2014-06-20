@@ -19,10 +19,10 @@ public class Bullet : MonoBehaviour {
 	{
 		myTransform.Translate(Vector3.right * Speed * Time.deltaTime);
 
-		if (myTransform.position.x > 19)
-		{
-			Destroy(this.gameObject);
-		}
+        if (!renderer.IsVisibleFrom(Camera.main))
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
 	// Collision with enemy

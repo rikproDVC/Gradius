@@ -17,9 +17,9 @@ public class Meteorite : MonoBehaviour {
 	{
         MyTransform.Translate (Vector3.left * Speed * Time.deltaTime);
 
-		if (MyTransform.position.x < -30)
-		{
-			DestroyObject(this.gameObject);
-		}
+        if (!renderer.IsVisibleFrom(Camera.main))
+        {
+            Destroy(this.gameObject);
+        }
 	}
 }
