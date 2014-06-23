@@ -25,7 +25,7 @@ public class LaserPU : MonoBehaviour {
 	void Update ()
 	{
 		//Shoot Laser
-		if(Input.GetKeyDown(",") && LaserCharge == 100 && LaserActive == false)
+        if(Input.GetKeyDown(",") && LaserCharge == 100 && LaserActive == false  && pause.paused==false)
 		{
 			//Instatiate
 				position = new Vector3(myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);

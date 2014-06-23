@@ -59,6 +59,7 @@
      <Compile Include="Assets\Resources\Levels\Scripts\Platformspawn.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Scroll.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Spawn.cs" />
+     <Compile Include="Assets\Resources\Levels\Scripts\pause.cs" />
      <Compile Include="Assets\Resources\Menu\scripts\MouseColor.cs" />
      <Compile Include="Assets\Resources\Player\Scripts\BulletPU.cs" />
      <Compile Include="Assets\Resources\Player\Scripts\LaserPU.cs" />

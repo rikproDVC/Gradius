@@ -23,7 +23,7 @@ public class RocketPU : MonoBehaviour {
 	void Update ()
 	{
 		//Shoot Rocket
-		if(Input.GetKey(".") && RocketAmmo > 0)
+        if(Input.GetKey(".") && RocketAmmo > 0  && pause.paused==false)
 		{
 			//ROF + Damage
 			if(PowerLevel == 0)
