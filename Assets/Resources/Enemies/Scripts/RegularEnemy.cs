@@ -13,7 +13,7 @@ public class RegularEnemy: MonoBehaviour
 
     //make variables for enemy attributes
 	private float enemySpeed = EnemySpawn.enemySpeed;
-	private int Health = 2;
+	private int Health = 15;
 
 
 	// Use this for initialization
@@ -77,6 +77,7 @@ public class RegularEnemy: MonoBehaviour
 		if(other.transform.tag == "Bullet")
 		{
 			Health -= Bullet.Damage;
+            Destroy(other.gameObject);
 		}
 
 		//... with Rocket
@@ -91,12 +92,6 @@ public class RegularEnemy: MonoBehaviour
 			Health -= Rocket.AreaDamage;
 		}
 
-		//... with Laser
-//		if(other.transform.tag == "Laser")
-//		{
-//			Health -= Laser.Damage;
-//		}
-
         //... with Shield
         if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
@@ -109,5 +104,14 @@ public class RegularEnemy: MonoBehaviour
             Player.PlayerLives -= 1;
             Health = 0;
         }
-	}
+       }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        //...with Laser
+        if(other.transform.tag == "Laser")
+        {
+
+            Health -= Laser.Damage;
+        }
+    }
 }

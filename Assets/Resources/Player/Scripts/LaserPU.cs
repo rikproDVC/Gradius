@@ -35,23 +35,21 @@ public class LaserPU : MonoBehaviour {
 			//Charge + Damage
 			if(PowerLevel >= 1)
 			{
-				Laser.ROF = 0.75f;
+				Laser.ROF = 0.2f;
 				RechargeRate = 0.75f;
                 Instantiate(LaserAudioFab, position, Quaternion.identity);
 			}
 			if(PowerLevel >= 2)
 			{
-				Laser.Damage = 2;
 				Laser.ConsumeRate = 0.05f;
 			}
 			if(PowerLevel >= 3)
 			{
-				Laser.ROF = 0.5f;
+				Laser.ROF = 0.1f;
 				RechargeRate = 0.5f;
 			}
 			if(PowerLevel == 4)
 			{
-				Laser.Damage = 4;
 				Laser.ConsumeRate = 0.1f;
 			}
 		}
