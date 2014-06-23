@@ -19,7 +19,7 @@ public class Platformspawn: MonoBehaviour
 	
 	void Update()
 	{
-		if (Player.PlayerScore == 1000)
+		if (Player.PlayerScore >= 1000)
         {
             if (spawned1 == false)
 			{
@@ -27,7 +27,7 @@ public class Platformspawn: MonoBehaviour
                 spawned1 = true;
 			}
 		}
-		if (Player.PlayerScore == 2000)
+		if (Player.PlayerScore >= 2000)
         {
 			if (spawned2 == false)
 			{
@@ -39,12 +39,12 @@ public class Platformspawn: MonoBehaviour
 	
 	void spawn1()
 	{
-		position = new Vector3 (23, 0.3f ,1);
+		position = new Vector3 (General.rightBorder, 0 ,1);
 		Instantiate (Prefab,position,Quaternion.identity);
 	}
 	void spawn2()
 	{
-		position = new Vector3 (23, 0.3f ,1);
+        position = new Vector3 (General.rightBorder, 0 ,1);
 		Instantiate (Prefab2,position,Quaternion.identity);
 	}
 }
