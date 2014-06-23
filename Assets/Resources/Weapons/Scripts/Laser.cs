@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Laser : MonoBehaviour {
 
-	public static float ROF = 1f;
+	public static float ROF = 0.3f;
 	public static float ConsumeRate = 0.01f;
 	public static int Damage = 1;
 
@@ -31,6 +31,8 @@ public class Laser : MonoBehaviour {
 			LaserPU.LaserCharge -= 1;
 			ConsumeTimer = Time.time;
 		}
+
+
 
 		//Destroy laser
 		if(LaserPU.LaserCharge == 0)
