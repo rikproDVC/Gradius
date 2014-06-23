@@ -19,7 +19,7 @@ public class EnemySpawn : MonoBehaviour {
 
     //make variables for getting waves and wave numbers
     private int wave;
-	private float delay = -5f;
+	public static float delay = -5f;
     private bool complete = true;
 
     //make variables for inside waves
@@ -45,9 +45,9 @@ public class EnemySpawn : MonoBehaviour {
             delay = Time.time;
             i = 0;
             order = 0;
-            Difficulty.stage++;
-            Difficulty.theSecondStageVariable++;
-            Difficulty.thatOtherStageVariable++;
+            Difficulty.stageVariableForHealthModifier++;
+            Difficulty.stageVariableForHomingEnemyHealth++;
+            Difficulty.stageVariableForSpeedModifier++;
         }
         //trigger the waves
         //IF the wave is not complete yet, trigger the wave
