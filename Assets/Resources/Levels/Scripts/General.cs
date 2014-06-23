@@ -16,9 +16,15 @@ public class General : MonoBehaviour {
 
 	// Use this for initialization
 	void Start()
-	{
+    {
         position = new Vector3(0, 0, 1);
-        Instantiate(PlayerFab, position, Quaternion.identity);
+        if (Application.loadedLevelName == "GradiusMenu")
+        {
+
+        } else
+        {
+            Instantiate(PlayerFab, position, Quaternion.identity);
+        }   
 	}
 	
 	// Update is called once per frame
