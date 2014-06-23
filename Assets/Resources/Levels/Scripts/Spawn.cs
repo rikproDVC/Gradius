@@ -8,6 +8,9 @@ public class Spawn : MonoBehaviour {
     private float Delay= 5F;
     private float YMin = -4.9F;
     private float YMax = 4.9F;
+    private float AngleMin = -40F;
+    private float AngleMax = 40F;
+
     private Vector3 position;
 
     public IEnumerator Do() {
@@ -21,11 +24,11 @@ public class Spawn : MonoBehaviour {
     }
 
     public void spawn ()
-    {
+    { 
     	if (Meteorite.tag == "Meteorite")
         {
     		position =new Vector3 (23, Random.Range(YMin,YMax) ,5);
-    		Instantiate (Meteorite,position,Quaternion.identity);
+            Instantiate (Meteorite,position,Quaternion.Euler (0,0,Random.Range(AngleMin,AngleMax)));
     	}
     	if (Meteorite.tag == "Enemy")
         {
