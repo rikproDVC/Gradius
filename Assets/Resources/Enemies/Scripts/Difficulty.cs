@@ -29,19 +29,22 @@ public class Difficulty : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        regularEnemyHealth = 3 + regularEnemyHealthModifier;
-        homingEnemyHealth = 7 + homingEnemyHealthModifier;
+        RegularEnemy.Health = RegularEnemy.baseHealth + regularEnemyHealthModifier;
+        HomingEnemy.Health = HomingEnemy.baseHealth + homingEnemyHealthModifier;
         regularEnemySpeedModifier = stageVariableForHomingEnemyHealth / 20;
         homingEnemySpeedModifier = stageVariableForSpeedModifier / 5;
 
+
         if (stageVariableForHealthModifier > 10)
         {
-            regularEnemyHealthModifier += 4;
+            regularEnemySpeedModifier += 4;
+            RegularEnemy.Speed = RegularEnemy.baseSpeed + regularEnemySpeedModifier;
             stageVariableForHealthModifier = 0;
         }
         if (stageVariableForHomingEnemyHealth > 20)
         {
             homingEnemyHealthModifier +=4;
+            HomingEnemy.Speed = HomingEnemy.baseSpeed + homingEnemySpeedModifier;
             stageVariableForHomingEnemyHealth = 0;
         }
 	}

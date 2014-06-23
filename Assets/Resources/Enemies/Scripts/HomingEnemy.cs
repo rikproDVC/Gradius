@@ -8,9 +8,10 @@ public class HomingEnemy : MonoBehaviour {
     public GameObject ExplosionFab;
     
     //make variables for enemy attributes
-    private int Health = Difficulty.homingEnemyHealth;
-    private float Speed;
-    private float timer;
+    public static int baseHealth;
+    public static int Health;
+    public static float baseSpeed;
+    public static float Speed;
     
     //make a vraible to get the enemy's position
     private Vector3 position;
@@ -20,19 +21,16 @@ public class HomingEnemy : MonoBehaviour {
     {
         //cache transform
         myTransform = transform;
-        timer = Time.time;
-        Speed = 6 + (Difficulty.homingEnemySpeedModifier);
-        Health = Difficulty.homingEnemyHealth;
+
+        baseHealth = 7;
+        baseSpeed = 6;
+        Health = baseHealth;
+        Speed = baseSpeed;
     }
 	
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - timer > 0.1 && Speed < 10)
-        {
-            Speed += 0.5f;
-            timer = Time.time;
-        }
 
         myTransform.Translate (Vector3.up * Speed * Time.deltaTime);
         if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
