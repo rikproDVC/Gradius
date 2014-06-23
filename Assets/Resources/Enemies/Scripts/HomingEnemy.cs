@@ -9,7 +9,7 @@ public class HomingEnemy : MonoBehaviour {
     
     //make variables for enemy attributes
     private int Health = 2;
-    private float enemySpeed = 3;
+    private float enemySpeed;
     private float timer;
     
     //make a vraible to get the enemy's position
@@ -22,12 +22,14 @@ public class HomingEnemy : MonoBehaviour {
         myTransform = transform;
 
         timer = Time.time;
+
+        enemySpeed = 6 + (EnemySpawn.thatOtherStageVariable / 5);
     }
 	
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - timer > 0.1)
+        if (Time.time - timer > 0.1 && enemySpeed < 10)
         {
             enemySpeed += 0.5f;
             timer = Time.time;

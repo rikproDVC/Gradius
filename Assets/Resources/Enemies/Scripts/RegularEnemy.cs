@@ -13,14 +13,18 @@ public class RegularEnemy: MonoBehaviour
 
     //make variables for enemy attributes
 	private float enemySpeed = EnemySpawn.enemySpeed;
-	private int Health = 2;
+    public int Health;
 
 
 	// Use this for initialization
 	void Start()
-	{
+    {
         //cache transform
-		myTransform = transform;
+        myTransform = transform;
+
+        Health = 3 + EnemySpawn.healthModifier;
+
+
 	}
 	
 	// Update is called once per frame
