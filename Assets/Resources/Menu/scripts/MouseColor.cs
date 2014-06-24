@@ -23,9 +23,9 @@ public class MouseColor : MonoBehaviour
         }
         else
         {
-            Difficulty.stageVariableForHealthModifier = 0;
-            Difficulty.stageVariableForHomingEnemyHealth = 0;
-            Difficulty.stageVariableForSpeedModifier = 0;
+            Difficulty.stageForHealthModifier = 0;
+            Difficulty.stageForHomingEnemyHealth = 0;
+            Difficulty.stageForSpeedModifier = 0;
             Difficulty.homingEnemyHealthModifier = 0;
             Difficulty.regularEnemyHealthModifier = 0;
             Difficulty.regularEnemySpeedModifier = 0;

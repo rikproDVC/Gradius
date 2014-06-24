@@ -11,15 +11,15 @@ public class Difficulty : MonoBehaviour {
     public static float regularEnemySpeedModifier;
     public static float homingEnemySpeedModifier;
 
-    public static int stageVariableForHealthModifier;
-    public static int stageVariableForHomingEnemyHealth;
-    public static int stageVariableForSpeedModifier;
+    public static int stageForHealthModifier;
+    public static int stageForHomingEnemyHealth;
+    public static int stageForSpeedModifier;
 
 	// Use this for initialization
 	void Start () {
-        stageVariableForHealthModifier = 0;
-        stageVariableForHomingEnemyHealth = 0;
-        stageVariableForSpeedModifier = 0;
+        stageForHealthModifier = 0;
+        stageForHomingEnemyHealth = 0;
+        stageForSpeedModifier = 0;
         homingEnemyHealthModifier = 0;
         regularEnemyHealthModifier = 0;
         regularEnemySpeedModifier = 0;
@@ -31,18 +31,18 @@ public class Difficulty : MonoBehaviour {
     {
         regularEnemyHealth = 3 + regularEnemyHealthModifier;
         homingEnemyHealth = 7 + homingEnemyHealthModifier;
-        regularEnemySpeedModifier = stageVariableForHomingEnemyHealth / 20;
-        homingEnemySpeedModifier = stageVariableForSpeedModifier / 5;
+        regularEnemySpeedModifier = stageForHomingEnemyHealth / 20;
+        homingEnemySpeedModifier = stageForSpeedModifier / 5;
 
-        if (stageVariableForHealthModifier > 10)
+        if (stageForHealthModifier > 10)
         {
             regularEnemyHealthModifier += 4;
-            stageVariableForHealthModifier = 0;
+            stageForHealthModifier = 0;
         }
-        if (stageVariableForHomingEnemyHealth > 20)
+        if (stageForHomingEnemyHealth > 20)
         {
             homingEnemyHealthModifier +=4;
-            stageVariableForHomingEnemyHealth = 0;
+            stageForHomingEnemyHealth = 0;
         }
 	}
 }

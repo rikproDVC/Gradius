@@ -45,9 +45,9 @@ public class EnemySpawn : MonoBehaviour {
             delay = Time.time;
             i = 0;
             order = 0;
-            Difficulty.stageVariableForHealthModifier++;
-            Difficulty.stageVariableForHomingEnemyHealth++;
-            Difficulty.stageVariableForSpeedModifier++;
+            Difficulty.stageForHealthModifier++;
+            Difficulty.stageForHomingEnemyHealth++;
+            Difficulty.stageForSpeedModifier++;
         }
         //trigger the waves
         //IF the wave is not complete yet, trigger the wave

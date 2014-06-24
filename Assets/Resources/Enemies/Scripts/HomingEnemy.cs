@@ -8,7 +8,7 @@ public class HomingEnemy : MonoBehaviour {
     public GameObject ExplosionFab;
     
     //make variables for enemy attributes
-    private int Health = Difficulty.homingEnemyHealth;
+    private int Health;
     private float Speed;
     private float timer;
     

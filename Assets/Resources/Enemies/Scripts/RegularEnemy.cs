@@ -10,7 +10,7 @@ public class RegularEnemy: MonoBehaviour
     private Vector3 position;
 
     //make variables for enemy attributes
-	private float Speed = 8 + Difficulty.regularEnemySpeedModifier;
+    private float Speed;
     public int Health;
 
 	// Use this for initialization
@@ -19,6 +19,7 @@ public class RegularEnemy: MonoBehaviour
         //cache transform
         myTransform = transform;
 
+        Speed = 8 + Difficulty.regularEnemySpeedModifier;
         Health = Difficulty.regularEnemyHealth;
 	}
 	
