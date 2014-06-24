@@ -22,7 +22,7 @@ public class BulletPU : MonoBehaviour {
 	void Update ()
 	{
 		//Shoot Bullet
-		if(Input.GetKey("space"))
+		if(Input.GetKey("space") && pause.paused==false)
 		{
 			//PowerUp
 			if(Time.time - Timer > ROF)

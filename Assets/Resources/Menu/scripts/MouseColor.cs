@@ -23,7 +23,15 @@ public class MouseColor : MonoBehaviour
         }
         else
         {
-           Application.LoadLevel("Stage1");
+            Difficulty.stageForHealthModifier = 0;
+            Difficulty.stageForHomingEnemyHealth = 0;
+            Difficulty.stageForSpeedModifier = 0;
+            Difficulty.homingEnemyHealthModifier = 0;
+            Difficulty.regularEnemyHealthModifier = 0;
+            Difficulty.regularEnemySpeedModifier = 0;
+            Difficulty.homingEnemySpeedModifier = 0;
+            EnemySpawn.delay = -5f;
+            Application.LoadLevel("Stage1");
         }
     }
 }

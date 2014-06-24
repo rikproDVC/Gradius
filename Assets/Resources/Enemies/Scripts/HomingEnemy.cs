@@ -8,8 +8,8 @@ public class HomingEnemy : MonoBehaviour {
     public GameObject ExplosionFab;
     
     //make variables for enemy attributes
-    private int Health = 2;
-    private float enemySpeed = 3;
+    private int Health;
+    private float Speed;
     private float timer;
     private float LaserTimer = 0;
     
@@ -21,20 +21,21 @@ public class HomingEnemy : MonoBehaviour {
     {
         //cache transform
         myTransform = transform;
-
         timer = Time.time;
+        Speed = 6 + (Difficulty.homingEnemySpeedModifier);
+        Health = Difficulty.homingEnemyHealth;
     }
 	
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - timer > 0.1)
+        if (Time.time - timer > 0.1 && Speed < 10)
         {
-            enemySpeed += 0.5f;
+            Speed += 0.5f;
             timer = Time.time;
         }
 
-        myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
+        myTransform.Translate (Vector3.up * Speed * Time.deltaTime);
         if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
         {
             Destroy(this.gameObject);
