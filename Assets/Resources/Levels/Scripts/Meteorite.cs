@@ -4,7 +4,7 @@ using System.Collections;
 public class Meteorite : MonoBehaviour {
 
 	private Transform MyTransform;
-    private int Speed = 5;
+    private int Speed = 10;
 
 	// Use this for initialization
 	void Start ()
@@ -22,7 +22,7 @@ public class Meteorite : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        if (MyTransform.position.y  < General.bottomBorder +1 || MyTransform.position.y  > General.topBorder +1 )
+        if (MyTransform.position.y  < General.bottomBorder -2 || MyTransform.position.y  > General.topBorder +2 )
         {
             Destroy(this.gameObject);
         }
