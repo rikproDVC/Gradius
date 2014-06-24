@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0affa3ba253565647a13badf25618ca1
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PauseFab: {fileID: 2800000, guid: 0ac880b75acd24444ba8a0ba3aab46d5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

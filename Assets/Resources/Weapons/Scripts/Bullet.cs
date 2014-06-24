@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour {
 	{
 		if(other.transform.tag == "Enemy")
 		{
-			Destroy(this.gameObject);
+		//	Destroy(this.gameObject);
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class MouseColor : MonoBehaviour 
 {
     public bool isQuit = false;
+    public bool isSound = false;
 
     void OnMouseEnter()
     {
@@ -20,6 +21,10 @@ public class MouseColor : MonoBehaviour
         if(isQuit)
         {
             Application.Quit();
+        }
+        if(isSound)
+        {
+            Application.LoadLevel("SoundOptions");
         }
         else
         {
