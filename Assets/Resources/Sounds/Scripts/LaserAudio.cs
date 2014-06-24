@@ -3,19 +3,17 @@ using System.Collections;
 
 public class LaserAudio : MonoBehaviour {
 
-    private float Timer;
-
 	// Use this for initialization
-	void Start () 
+	void Start() 
     {
-        Timer = Time.time;
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update()
+    {
         //destroy when laser is gone.
-        if (LaserPU.LaserActive == false)
+        if (LaserPU.LaserCharge == 0)
         {
             Destroy(this.gameObject); 
         }

@@ -7,26 +7,40 @@ public class RegularEnemy: MonoBehaviour
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-    private Vector3 position;
-
-
+<<<<<<< HEAD
 
     //make variables for enemy attributes
 	private float enemySpeed = EnemySpawn.enemySpeed;
+<<<<<<< HEAD
 	private int Health = 3;
+=======
+    private Vector3 position;
+    private int Health = 4;
+    private float Timer = 0f;
+    private bool ExplosionDamage = false;
+=======
+    private Vector3 position;
+>>>>>>> f03acb5b2e3770af97f17b879480a9e8c2d9f19d
 
+    //make variables for enemy attributes
+    private float Speed;
+    public int Health;
+>>>>>>> bd59aab94a264260632a0274692efdfda085f4a4
 
 	// Use this for initialization
 	void Start()
-	{
+    {
         //cache transform
-		myTransform = transform;
+        myTransform = transform;
+
+        Speed = 8 + Difficulty.regularEnemySpeedModifier;
+        Health = Difficulty.regularEnemyHealth;
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		myTransform.Translate (Vector3.up * enemySpeed * Time.deltaTime);
+		myTransform.Translate (Vector3.up * Speed * Time.deltaTime);
 
 
         if (myTransform.position.x < -20)
@@ -86,12 +100,6 @@ public class RegularEnemy: MonoBehaviour
 			Health -= Rocket.ImpactDamage;
 		}
 
-		//... with Explosion
-		if(other.transform.tag == "Explosion")
-		{
-			Health -= Rocket.AreaDamage;
-		}
-
         //... with Shield
         if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
@@ -104,14 +112,28 @@ public class RegularEnemy: MonoBehaviour
             Player.PlayerLives -= 1;
             Health = 0;
         }
-       }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         //...with Laser
         if(other.transform.tag == "Laser")
         {
+            if(Time.time - Timer > Laser.ROF)
+            {
+                Health -= Laser.Damage;
+                Timer = Time.time;
+            }
+        }
 
-            Health -= Laser.Damage;
+        //... with Explosion
+        if(other.transform.tag == "Explosion")
+        {
+            if(ExplosionDamage == false)
+            {
+                Health -= Rocket.AreaDamage;
+                ExplosionDamage = true;
+            }
         }
     }
 }

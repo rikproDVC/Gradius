@@ -28,9 +28,10 @@ public class LaserPU : MonoBehaviour {
         if(Input.GetKeyDown(",") && LaserCharge == 100 && LaserActive == false  && pause.paused==false)
 		{
 			//Instatiate
-				position = new Vector3(myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
-				Instantiate(LaserFab, position, Quaternion.identity);
-				LaserActive = true;
+			position = new Vector3(myTransform.position.x + 5.4f, myTransform.position.y, myTransform.position.z);
+			Instantiate(LaserFab, position, Quaternion.identity);
+            Instantiate(LaserAudioFab, position, Quaternion.identity);
+			LaserActive = true;
 
 			//Charge + Damage
 			if(PowerLevel >= 1)

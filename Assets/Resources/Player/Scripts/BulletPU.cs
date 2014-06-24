@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletPU : MonoBehaviour {
 
-	public static int PowerLevel = 0;
+    public static int PowerLevel = 0;
 	public GameObject BulletFab;
     public GameObject BulletAudioFab;
 
