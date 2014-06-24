@@ -32,8 +32,6 @@ public class Laser : MonoBehaviour {
 			ConsumeTimer = Time.time;
 		}
 
-
-
 		//Destroy laser
 		if(LaserPU.LaserCharge == 0)
 		{

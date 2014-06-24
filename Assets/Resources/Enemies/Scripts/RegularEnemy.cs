@@ -7,14 +7,13 @@ public class RegularEnemy: MonoBehaviour
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-    private Vector3 position;
-
-
 
     //make variables for enemy attributes
 	private float enemySpeed = EnemySpawn.enemySpeed;
-	private int Health = 15;
-
+    private Vector3 position;
+    private int Health = 4;
+    private float Timer = 0f;
+    private bool ExplosionDamage = false;
 
 	// Use this for initialization
 	void Start()
@@ -86,12 +85,6 @@ public class RegularEnemy: MonoBehaviour
 			Health -= Rocket.ImpactDamage;
 		}
 
-		//... with Explosion
-		if(other.transform.tag == "Explosion")
-		{
-			Health -= Rocket.AreaDamage;
-		}
-
         //... with Shield
         if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
@@ -104,14 +97,28 @@ public class RegularEnemy: MonoBehaviour
             Player.PlayerLives -= 1;
             Health = 0;
         }
-       }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
         //...with Laser
         if(other.transform.tag == "Laser")
         {
+            if(Time.time - Timer > Laser.ROF)
+            {
+                Health -= Laser.Damage;
+                Timer = Time.time;
+            }
+        }
 
-            Health -= Laser.Damage;
+        //... with Explosion
+        if(other.transform.tag == "Explosion")
+        {
+            if(ExplosionDamage == false)
+            {
+                Health -= Rocket.AreaDamage;
+                ExplosionDamage = true;
+            }
         }
     }
 }

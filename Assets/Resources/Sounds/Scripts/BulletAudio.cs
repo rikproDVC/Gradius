@@ -5,9 +5,8 @@ public class BulletAudio : MonoBehaviour {
 
     private float Timer;
 
-
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
         Timer = Time.time;
 	}
@@ -15,10 +14,10 @@ public class BulletAudio : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        //destroy after 3 sec.
-        if (Time.time - Timer > 3f)
+        //destroy after 1 sec.
+        if (Time.time - Timer > 1f)
         {
-          Destroy(this.gameObject); 
+            Destroy(this.gameObject); 
         }
 	}
 }

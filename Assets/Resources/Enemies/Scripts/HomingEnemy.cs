@@ -11,6 +11,7 @@ public class HomingEnemy : MonoBehaviour {
     private int Health = 2;
     private float enemySpeed = 3;
     private float timer;
+    private float LaserTimer = 0;
     
     //make a vraible to get the enemy's position
     private Vector3 position;
@@ -51,29 +52,52 @@ public class HomingEnemy : MonoBehaviour {
         }
     }
     
-    // Collision detector for Player
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Player.PlayerScore -= 100;
-            Destroy(this.gameObject);
-        }
-    }
-    
     // Collision ...
     void OnTriggerEnter2D(Collider2D other)
     {
         //... with Bullet
-        if (other.transform.tag == "Bullet")
+        if(other.transform.tag == "Bullet")
         {
             Health -= Bullet.Damage;
+            Destroy(other.gameObject);
         }
         
         //... with Rocket
-        if (other.transform.tag == "Rocket")
+        if(other.transform.tag == "Rocket")
         {
             Health -= Rocket.ImpactDamage;
+        }
+        
+        //... with Explosion
+        if(other.transform.tag == "Explosion")
+        {
+            Health -= Rocket.AreaDamage;
+        }
+        
+        //... with Shield
+        if(other.transform.tag == "Shield" && Player.ShieldActive == true)
+        {
+            Health = 0;
+        }
+        
+        //... with Player
+        if(other.transform.tag == "Player" && Player.ShieldActive == false)
+        {
+            Player.PlayerLives -= 1;
+            Health = 0;
+        }
+    }
+    
+    void OnTriggerStay2D(Collider2D other)
+    {
+        //...with Laser
+        if(other.transform.tag == "Laser")
+        {
+            if(Time.time - LaserTimer > Laser.ROF)
+            {
+                Health -= Laser.Damage;
+                LaserTimer = Time.time;
+            }
         }
     }
 }

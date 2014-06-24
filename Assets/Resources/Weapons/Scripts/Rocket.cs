@@ -6,6 +6,7 @@ public class Rocket : MonoBehaviour
 	public static int ImpactDamage = 2;
 	public static int AreaDamage = 2;
     public GameObject ExplosionFab;
+    public GameObject ExplosionAudioFab;
 
     private Vector3 Position;
 	private Transform myTransform;
@@ -39,6 +40,7 @@ public class Rocket : MonoBehaviour
 		{
             Position = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
             Instantiate(ExplosionFab, Position, Quaternion.identity);
+            Instantiate(ExplosionAudioFab, Position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}
 	}

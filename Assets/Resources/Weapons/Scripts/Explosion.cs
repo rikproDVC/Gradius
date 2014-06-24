@@ -14,7 +14,7 @@ public class Explosion : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        if (Time.time - Timer > 2f)
+        if (Time.time - Timer > 1f)
         {
             Destroy(this.gameObject);
         }
