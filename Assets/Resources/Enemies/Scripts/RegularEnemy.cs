@@ -8,7 +8,7 @@ public class RegularEnemy: MonoBehaviour
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
 
-    //make variables for enemy attributes
+    //make variables for damage values
     private Vector3 position;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
@@ -30,19 +30,15 @@ public class RegularEnemy: MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+        //make enemy move forward
 		myTransform.Translate (Vector3.up * Speed * Time.deltaTime);
 
-
-        if (myTransform.position.x < -20)
-        {
-            Destroy(this.gameObject);
-        }
-
+        //destroy the enemy if out of screen
         if (myTransform.position.x < General.leftBorder || myTransform.position.x > General.rightBorder)
 		{
 			Destroy(this.gameObject);
 		}
-
+        //destroy the enemy at 0hp with chance of dropping a powerup
 		if (Health <= 0)
 		{
 			Player.PlayerScore += 100;
@@ -56,19 +52,10 @@ public class RegularEnemy: MonoBehaviour
 		}
 	}
 
-	// Collision detector for Player
+	// Collision detector...
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player")
-		{
-			Player.PlayerScore -= 100;
-			Destroy(this.gameObject);
-		}
-	}
 
-	// Collision ...
-	void OnTriggerEnter2D(Collider2D other)
-	{
 		//... with Bullet
 		if(other.transform.tag == "Bullet")
 		{
@@ -85,14 +72,15 @@ public class RegularEnemy: MonoBehaviour
         //... with Shield
         if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
-            Health = 0;
+            Destroy(this.gameObject);
         }
 
         //... with Player
         if(other.transform.tag == "Player" && Player.ShieldActive == false)
         {
+            Player.PlayerScore -= 100;
             Player.PlayerLives -= 1;
-            Health = 0;
+            Destroy(this.gameObject);
         }
     }
 
