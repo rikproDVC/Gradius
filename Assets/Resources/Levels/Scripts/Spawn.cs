@@ -5,7 +5,7 @@ public class Spawn : MonoBehaviour {
 
     public GameObject Meteorite;
 
-    private float Delay= 3F;
+    private float Delay= 1.5F;
     private float YMin = -4.9F;
     private float YMax = 4.9F;
     private float AngleMin = -30F;
@@ -27,8 +27,6 @@ public class Spawn : MonoBehaviour {
     { 
     	if (Meteorite.tag == "Meteorite")
         {
-    		position =new Vector3 (General.rightBorder+2, Random.Range(YMin,YMax) ,5);
-            Instantiate (Meteorite,position,Quaternion.Euler (0,0,Random.Range(AngleMin,AngleMax)));
             position =new Vector3 (General.rightBorder+2 , Random.Range(YMin,YMax) ,5);
             Instantiate (Meteorite,position,Quaternion.Euler (0,0,Random.Range(AngleMin,AngleMax)));
 

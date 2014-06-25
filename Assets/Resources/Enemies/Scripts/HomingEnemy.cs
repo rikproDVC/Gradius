@@ -6,22 +6,25 @@ public class HomingEnemy : MonoBehaviour {
     private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-    
+
+    //make variables for damage values
+    private Vector3 position;
+    private float Timer = 0f;
+    private bool ExplosionDamage = false;
+
     //make variables for enemy attributes
     private int Health;
     private float Speed;
-    private float timer;
+    private float speedIncreaseTimer;
     private float LaserTimer = 0;
-    
-    //make a vraible to get the enemy's position
-    private Vector3 position;
+
     
     // Use this for initialization
     void Start()
     {
         //cache transform
         myTransform = transform;
-        timer = Time.time;
+        speedIncreaseTimer = Time.time;
         Speed = 6 + (Difficulty.homingEnemySpeedModifier);
         Health = Difficulty.homingEnemyHealth;
     }
@@ -29,10 +32,10 @@ public class HomingEnemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - timer > 0.1 && Speed < 10)
+        if (Time.time - speedIncreaseTimer > 0.1 && Speed < 10)
         {
             Speed += 0.5f;
-            timer = Time.time;
+            speedIncreaseTimer = Time.time;
         }
 
         myTransform.Translate (Vector3.up * Speed * Time.deltaTime);
@@ -53,9 +56,10 @@ public class HomingEnemy : MonoBehaviour {
         }
     }
     
-    // Collision ...
-    void OnTriggerEnter2D(Collider2D other)
+    // Collision detector...
+    void OnCollisionEnter2D(Collision2D other)
     {
+        
         //... with Bullet
         if(other.transform.tag == "Bullet")
         {
@@ -69,23 +73,18 @@ public class HomingEnemy : MonoBehaviour {
             Health -= Rocket.ImpactDamage;
         }
         
-        //... with Explosion
-        if(other.transform.tag == "Explosion")
-        {
-            Health -= Rocket.AreaDamage;
-        }
-        
         //... with Shield
         if(other.transform.tag == "Shield" && Player.ShieldActive == true)
         {
-            Health = 0;
+            Destroy(this.gameObject);
         }
         
         //... with Player
         if(other.transform.tag == "Player" && Player.ShieldActive == false)
         {
+            Player.PlayerScore -= 100;
             Player.PlayerLives -= 1;
-            Health = 0;
+            Destroy(this.gameObject);
         }
     }
     
@@ -94,10 +93,20 @@ public class HomingEnemy : MonoBehaviour {
         //...with Laser
         if(other.transform.tag == "Laser")
         {
-            if(Time.time - LaserTimer > Laser.ROF)
+            if(Time.time - Timer > Laser.ROF)
             {
                 Health -= Laser.Damage;
-                LaserTimer = Time.time;
+                Timer = Time.time;
+            }
+        }
+        
+        //... with Explosion
+        if(other.transform.tag == "Explosion")
+        {
+            if(ExplosionDamage == false)
+            {
+                Health -= Rocket.AreaDamage;
+                ExplosionDamage = true;
             }
         }
     }

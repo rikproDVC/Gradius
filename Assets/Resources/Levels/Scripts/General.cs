@@ -18,7 +18,7 @@ public class General : MonoBehaviour {
 	void Start()
     {
         position = new Vector3(0, 0, 1);
-        if (Application.loadedLevelName == "GradiusMenu")
+        if (Application.loadedLevelName == "Menu")
         {
 
         } else
@@ -32,7 +32,7 @@ public class General : MonoBehaviour {
 	{
 
         dist = (transform.position - Camera.main.transform.position).z;
-        
+
         leftBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).x;
         rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, dist)).x;
         topBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 1, dist)).y;
