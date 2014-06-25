@@ -3,28 +3,15 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-    //make variables for Gameobjects spawns; cache transform
-	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
+    public static int Health;
+    public static float Speed = 0;
 
-<<<<<<< HEAD
-    //make variables for enemy attributes
-	private float Speed = 0;
-=======
-    //make variables for damage values
->>>>>>> 3e96591afdb09fd98dded018f2a8c9a255e3e103
+	private Transform myTransform;
     private Vector3 position;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
-<<<<<<< HEAD
-=======
-
-    //make variables for enemy attributes
-    private float Speed;
-    public int Health;
-
->>>>>>> 3e96591afdb09fd98dded018f2a8c9a255e3e103
 
 	// Use this for initialization
 	void Start()
@@ -33,7 +20,7 @@ public class RegularEnemy: MonoBehaviour
         myTransform = transform;
 
         Speed = 8 + Difficulty.regularEnemySpeedModifier;
-        Health =Difficulty.regularEnemyHealth;
+        Health = Difficulty.regularEnemyHealth;
 	}
 	
 	// Update is called once per frame
