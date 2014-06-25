@@ -6,11 +6,7 @@ public class General : MonoBehaviour {
 	public GameObject PlayerFab;
 
     public static float leftBorder;
-    public static float leftBorder2;
     public static float rightBorder;
-    public static float rightBorder2;
-    public static float topBorder2;
-    public static float bottomBorder2;
     public static float topBorder;
     public static float bottomBorder;
     public float dist;
@@ -22,7 +18,7 @@ public class General : MonoBehaviour {
 	void Start()
     {
         position = new Vector3(0, 0, 1);
-        if (Application.loadedLevelName == "GradiusMenu")
+        if (Application.loadedLevelName == "Menu")
         {
 
         } else
