@@ -55,8 +55,17 @@ public class RegularEnemy: MonoBehaviour
 
 	// Collision detector...
 	void OnCollisionEnter2D(Collision2D other)
-	{
-
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Player.PlayerScore -= 100;
+            Destroy(this.gameObject);
+        }
+    }
+    
+    // Collision ...
+    void OnTriggerEnter2D(Collider2D other)
+    {
 		//... with Bullet
 		if(other.transform.tag == "Bullet")
 		{
