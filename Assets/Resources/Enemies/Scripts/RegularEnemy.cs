@@ -8,19 +8,10 @@ public class RegularEnemy: MonoBehaviour
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
 
-
-    //make variables for enemy attributes
-	private float enemySpeed = EnemySpawn.enemySpeed;
-
-	private int Health = 3;
-
     //make variables for damage values
     private Vector3 position;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
-
-    private Vector3 position;
-
 
     //make variables for enemy attributes
     private float Speed;
