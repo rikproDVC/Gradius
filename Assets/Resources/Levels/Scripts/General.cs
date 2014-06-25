@@ -6,7 +6,11 @@ public class General : MonoBehaviour {
 	public GameObject PlayerFab;
 
     public static float leftBorder;
+    public static float leftBorder2;
     public static float rightBorder;
+    public static float rightBorder2;
+    public static float topBorder2;
+    public static float bottomBorder2;
     public static float topBorder;
     public static float bottomBorder;
     public float dist;
@@ -32,7 +36,7 @@ public class General : MonoBehaviour {
 	{
 
         dist = (transform.position - Camera.main.transform.position).z;
-        
+
         leftBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).x;
         rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, dist)).x;
         topBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 1, dist)).y;
