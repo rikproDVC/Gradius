@@ -7,21 +7,13 @@ public class RegularEnemy: MonoBehaviour
 	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-<<<<<<< HEAD
 
     //make variables for enemy attributes
-	private float enemySpeed = EnemySpawn.enemySpeed;
+	private float Speed = 0;
     private Vector3 position;
     private int Health = 4;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
-=======
-    private Vector3 position;
-
-    //make variables for enemy attributes
-    private float Speed;
-    public int Health;
->>>>>>> bd59aab94a264260632a0274692efdfda085f4a4
 
 	// Use this for initialization
 	void Start()
