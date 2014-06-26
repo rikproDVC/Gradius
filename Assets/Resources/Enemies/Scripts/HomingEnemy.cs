@@ -25,8 +25,8 @@ public class HomingEnemy : MonoBehaviour {
         //cache transform
         myTransform = transform;
         speedIncreaseTimer = Time.time;
-        Speed = 6 + (Difficulty.homingEnemySpeedModifier);
-        Health = 4 + Difficulty.homingEnemyHealth;
+        Speed = 6 + Difficulty.homingEnemySpeedModifier;
+        Health = 4 + Difficulty.homingEnemyHealthModifier;
     }
 	
     // Update is called once per frame

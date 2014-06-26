@@ -2,18 +2,16 @@
 using System.Collections;
 
 public class Difficulty : MonoBehaviour {
+    //Get the wave number to get the difficulty level
+    public static int stageForRegEnemyHealth = EnemySpawn.wave;
+    public static int stageForHomingEnemyHealth = EnemySpawn.wave;
+    public static int stageForSpeedModifier = EnemySpawn.wave;
 
-    public static int regularEnemyHealth;
-    public static int homingEnemyHealth;
-
+    // make variables for setting health and speed variables in enemies
     public static int regularEnemyHealthModifier;
     public static int homingEnemyHealthModifier;
     public static float regularEnemySpeedModifier;
     public static float homingEnemySpeedModifier;
-
-    public static int stageForRegEnemyHealth = EnemySpawn.wave;
-    public static int stageForHomingEnemyHealth = EnemySpawn.wave;
-    public static int stageForSpeedModifier = EnemySpawn.wave;
 
 	// Use this for initialization
 	void Start()

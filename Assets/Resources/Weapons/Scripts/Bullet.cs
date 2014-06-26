@@ -18,23 +18,9 @@ public class Bullet : MonoBehaviour {
 	void Update()
 	{
 		myTransform.Translate(Vector3.right * Speed * Time.deltaTime);
-
-        if (myTransform.position.x > General.rightBorder || myTransform.position.y < General.bottomBorder || myTransform.position.y > General.topBorder)
-		{
-			Destroy(this.gameObject);
-		}
         if (!renderer.IsVisibleFrom(Camera.main))
         {
             Destroy(this.gameObject);
         }
-	}
-
-	// Collision with enemy
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.transform.tag == "Enemy")
-		{
-		//	Destroy(this.gameObject);
-		}
 	}
 }

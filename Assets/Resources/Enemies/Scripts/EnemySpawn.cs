@@ -13,26 +13,34 @@ public class EnemySpawn : MonoBehaviour {
     public static string[] rotations;
     public static float[] xMarkers;
     public static float[] yMarkers;
-    private float nullPath = 361;
+    private float nullPath;
 
     public Vector3 playerPosition;
 
     //make variables for getting waves and wave numbers
     public static int wave;
     private int waveType;
-	public static float delay = -5f;
-    private bool complete = true;
+    public static float delay;
+    private bool complete;
 
 
     //make variables for inside waves
-	private float spawnTimer = 0f;
-	private int i = 0;
+	private float spawnTimer;
+	private int i;
     private int length;
-	private int order = 0;
+	private int order;
 
 	void Start ()
     {
+        nullPath = 361;
 
+        wave = 0;
+        delay = -5f;
+        complete = true;
+
+        spawnTimer = 0f;
+        i = 0;
+        order = 0;
     }
 
 	void Update()
@@ -47,9 +55,7 @@ public class EnemySpawn : MonoBehaviour {
             delay = Time.time;
             i = 0;
             order = 0;
-            Difficulty.stageForRegEnemyHealth++;
-            Difficulty.stageForHomingEnemyHealth++;
-            Difficulty.stageForSpeedModifier++;
+            wave++;
         }
         //trigger the waves
         //IF the wave is not complete yet, trigger the wave

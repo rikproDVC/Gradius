@@ -5,8 +5,8 @@ public class RegularEnemy: MonoBehaviour
 {
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
-    public static int Health;
-    public static float Speed = 0;
+    private int Health;
+    public static float Speed;
 
 	private Transform myTransform;
     private Vector3 position;
@@ -20,7 +20,7 @@ public class RegularEnemy: MonoBehaviour
         myTransform = transform;
 
         Speed = 8 + Difficulty.regularEnemySpeedModifier;
-        Health = 4 + Difficulty.regularEnemyHealth;
+        Health = 4 + Difficulty.regularEnemyHealthModifier;
 	}
 	
 	// Update is called once per frame
