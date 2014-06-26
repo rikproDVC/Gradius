@@ -11,38 +11,31 @@ public class Difficulty : MonoBehaviour {
     public static float regularEnemySpeedModifier;
     public static float homingEnemySpeedModifier;
 
-    public static int stageForHealthModifier;
-    public static int stageForHomingEnemyHealth;
-    public static int stageForSpeedModifier;
+    public static int stageForRegEnemyHealth = EnemySpawn.wave;
+    public static int stageForHomingEnemyHealth = EnemySpawn.wave;
+    public static int stageForSpeedModifier = EnemySpawn.wave;
 
 	// Use this for initialization
-	void Start () {
-        stageForHealthModifier = 0;
-        stageForHomingEnemyHealth = 0;
-        stageForSpeedModifier = 0;
-        homingEnemyHealthModifier = 0;
-        regularEnemyHealthModifier = 0;
-        regularEnemySpeedModifier = 0;
-        homingEnemySpeedModifier = 0;
+	void Start()
+    {
+        while (stageForRegEnemyHealth > 10)
+        {
+            regularEnemyHealthModifier =+ 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        while (stageForHomingEnemyHealth > 20)
+        {
+            homingEnemyHealthModifier =+ 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+
+        regularEnemySpeedModifier = stageForSpeedModifier / 10;
+        homingEnemySpeedModifier = stageForSpeedModifier / 20;
 	}
 	
 	// Update is called once per frame
 	void Update()
     {
-        regularEnemyHealth = 3 + regularEnemyHealthModifier;
-        homingEnemyHealth = 7 + homingEnemyHealthModifier;
-        regularEnemySpeedModifier = stageForHomingEnemyHealth / 20;
-        homingEnemySpeedModifier = stageForSpeedModifier / 5;
 
-        if (stageForHealthModifier > 10)
-        {
-            regularEnemyHealthModifier += 4;
-            stageForHealthModifier = 0;
-        }
-        if (stageForHomingEnemyHealth > 20)
-        {
-            homingEnemyHealthModifier +=4;
-            stageForHomingEnemyHealth = 0;
-        }
 	}
 }

@@ -8,6 +8,8 @@ public class HomingEnemySearch : MonoBehaviour {
 
     public Vector3 playerPosition;
 
+    public float rotateTimer;
+
 	// Use this for initialization
 	void Start () {
         myTransform = transform;
@@ -23,16 +25,24 @@ public class HomingEnemySearch : MonoBehaviour {
             //IF the enemy's y axis is LOWER THAN the player's y axis + .01 AND HIGHER THAN the player's y axis - .01
             if (myTransform.position.y < playerPosition.y + 0.1 && myTransform.position.y > playerPosition.y - 0.1)
             {
-                angle = 90;
-                myTransform.rotation = Quaternion.Euler(0, 0, angle);
+                    angle = 90;
+                    myTransform.rotation = Quaternion.Euler(0, 0, angle);
             } else if (playerPosition.y > myTransform.position.y)
             {
-                angle = 45;
-                myTransform.rotation = Quaternion.Euler(0, 0, angle);
+                if (Time.time - rotateTimer > 0.2)
+                {
+                    angle = 45;
+                    myTransform.rotation = Quaternion.Euler(0, 0, angle);
+                    rotateTimer = Time.time;
+                }
             } else if (playerPosition.y < myTransform.position.y)
             {
-                angle = 135;
-                myTransform.rotation = Quaternion.Euler(0, 0, angle);
+                if (Time.time - rotateTimer > 0.2)
+                {
+                    angle = 135;
+                    myTransform.rotation = Quaternion.Euler(0, 0, angle);
+                    rotateTimer = Time.time;
+                }
             }
         } else
         {

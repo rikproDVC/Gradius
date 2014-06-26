@@ -18,9 +18,11 @@ public class EnemySpawn : MonoBehaviour {
     public Vector3 playerPosition;
 
     //make variables for getting waves and wave numbers
-    private int wave;
+    public static int wave;
+    private int waveType;
 	public static float delay = -5f;
     private bool complete = true;
+
 
     //make variables for inside waves
 	private float spawnTimer = 0f;
@@ -40,12 +42,12 @@ public class EnemySpawn : MonoBehaviour {
         //IF there has passed more than 10 seconds AND the last wave is COMPLETE, get a new random WAVE
         if (Time.time - delay > 10 && complete == true)
         {
-            wave = Random.Range(1, 6);
+            waveType = Random.Range(1, 6);
             complete = false;
             delay = Time.time;
             i = 0;
             order = 0;
-            Difficulty.stageForHealthModifier++;
+            Difficulty.stageForRegEnemyHealth++;
             Difficulty.stageForHomingEnemyHealth++;
             Difficulty.stageForSpeedModifier++;
         }
@@ -53,23 +55,23 @@ public class EnemySpawn : MonoBehaviour {
         //IF the wave is not complete yet, trigger the wave
         if (complete == false)
         {
-            if (wave == 1)
+            if (waveType == 1)
             {
                 wave1();
             } 
-            else if (wave == 2)
+            else if (waveType == 2)
             {
                 wave2();
             } 
-            else if (wave == 3)
+            else if (waveType == 3)
             {
                 wave3();
             }
-            else if (wave == 4)
+            else if (waveType == 4)
             {
                 wave4();
             }
-            else if (wave == 5)
+            else if (waveType == 5)
             {
                 wave5();
             }

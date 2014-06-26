@@ -26,7 +26,7 @@ public class HomingEnemy : MonoBehaviour {
         myTransform = transform;
         speedIncreaseTimer = Time.time;
         Speed = 6 + (Difficulty.homingEnemySpeedModifier);
-        Health = Difficulty.homingEnemyHealth;
+        Health = 4 + Difficulty.homingEnemyHealth;
     }
 	
     // Update is called once per frame
@@ -59,7 +59,16 @@ public class HomingEnemy : MonoBehaviour {
     // Collision detector...
     void OnCollisionEnter2D(Collision2D other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            Player.PlayerScore -= 100;
+            Destroy(this.gameObject);
+        }
+    }
+    
+    // Collision ...
+    void OnTriggerEnter2D(Collider2D other)
+    {
         //... with Bullet
         if(other.transform.tag == "Bullet")
         {

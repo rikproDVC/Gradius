@@ -25,7 +25,7 @@ public class RegularEnemy: MonoBehaviour
         myTransform = transform;
 
         Speed = 8 + Difficulty.regularEnemySpeedModifier;
-        Health = Difficulty.regularEnemyHealth;
+        Health = 4 + Difficulty.regularEnemyHealth;
 	}
 	
 	// Update is called once per frame
