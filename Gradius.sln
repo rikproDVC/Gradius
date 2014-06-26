@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{93916ADF-26B6-36BC-5695-7A6F5E70C581}") = "Gradius", "Assembly-CSharp.csproj", "{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}"
 EndProject
+Project("{93916ADF-26B6-36BC-5695-7A6F5E70C581}") = "Gradius", "Assembly-CSharp-Editor.csproj", "{1F2D7DAB-2F28-C6EF-2570-1C0B3254D0A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,21 @@ Global
 		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA23CCE4-4E56-D856-EDC4-11CBE195F17E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2D7DAB-2F28-C6EF-2570-1C0B3254D0A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2D7DAB-2F28-C6EF-2570-1C0B3254D0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2D7DAB-2F28-C6EF-2570-1C0B3254D0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2D7DAB-2F28-C6EF-2570-1C0B3254D0A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																																																																									GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 4a4af296a0ea974ec3f9ead131b2c9bdf7678b83
 =======
 																																																																																			GlobalSection(MonoDevelopProperties) = preSolution
 =======
@@ -27,6 +39,7 @@ Global
 =======
 																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> 54ae9a1c967460190fc16520ac7dbace481c387d
+>>>>>>> 3e96591afdb09fd98dded018f2a8c9a255e3e103
 =======
 <<<<<<< HEAD
 																																																																																		GlobalSection(MonoDevelopProperties) = preSolution

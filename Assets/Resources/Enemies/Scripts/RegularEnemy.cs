@@ -3,20 +3,15 @@ using System.Collections;
 
 public class RegularEnemy: MonoBehaviour
 {
-    //make variables for Gameobjects spawns; cache transform
-	private Transform myTransform;
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
+    public static int Health;
+    public static float Speed = 0;
 
-    //make variables for damage values
+	private Transform myTransform;
     private Vector3 position;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
-
-    //make variables for enemy attributes
-    private float Speed;
-    public int Health;
-
 
 	// Use this for initialization
 	void Start()
