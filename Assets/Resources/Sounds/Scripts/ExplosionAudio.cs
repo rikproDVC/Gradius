@@ -4,11 +4,12 @@ using System.Collections;
 public class ExplosionAudio : MonoBehaviour {
 
     private float Timer;
-    
+  
     // Use this for initialization
     void Start()
     {
         Timer = Time.time;
+
     }
     
     // Update is called once per frame

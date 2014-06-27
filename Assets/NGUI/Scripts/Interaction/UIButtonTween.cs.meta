@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: eaee0fa3c7a782f43ac65b3fea68c1d6
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tweenTarget: {instanceID: 0}
+  - Target: {fileID: 100004, guid: 3945ddd1d3081a54ab4479f981df598e, type: 2}
+  - eventReceiver: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

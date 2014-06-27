@@ -8,7 +8,7 @@ public class BulletAudio : MonoBehaviour {
 	// Use this for initialization
 	void Start()
     {
-        Timer = Time.time;
+        Timer = Time.time;     
 	}
 	
 	// Update is called once per frame

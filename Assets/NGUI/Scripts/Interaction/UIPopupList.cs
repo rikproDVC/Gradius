@@ -22,6 +22,7 @@ public class UIPopupList : MonoBehaviour
 
 	const float animSpeed = 0.15f;
 
+
 	public enum Position
 	{
 		Auto,
@@ -215,6 +216,7 @@ public class UIPopupList : MonoBehaviour
 
 	void Start ()
 	{
+
 		// Automatically choose the first item
 		if (string.IsNullOrEmpty(mSelectedItem))
 		{

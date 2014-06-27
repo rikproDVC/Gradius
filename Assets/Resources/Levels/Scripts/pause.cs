@@ -8,7 +8,7 @@ public class pause : MonoBehaviour
     public GameObject MainMenuFab;
 
     private Vector3 position;
-    private bool over = false;
+    public static bool over = false;
 
     public float centerx = General.topBorder + General.bottomBorder / 2;
     public float centery = General.leftBorder + General.rightBorder / 2;

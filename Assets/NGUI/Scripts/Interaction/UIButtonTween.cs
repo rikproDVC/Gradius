@@ -6,11 +6,13 @@
 using UnityEngine;
 using AnimationOrTween;
 
+
 /// <summary>
 /// Attaching this to an object lets you activate tweener components on other objects.
 /// </summary>
 
 [AddComponentMenu("NGUI/Interaction/Button Tween")]
+
 public class UIButtonTween : MonoBehaviour
 {
 	/// <summary>
@@ -18,7 +20,7 @@ public class UIButtonTween : MonoBehaviour
 	/// </summary>
     public bool play;
 	public GameObject tweenTarget;
-
+	public GameObject Target;
 	/// <summary>
 	/// If there are multiple tweens, you can choose which ones get activated by changing their group.
 	/// </summary>
@@ -106,6 +108,8 @@ public class UIButtonTween : MonoBehaviour
 	{
         if (play)
         {
+            pause.paused=false;
+            pause.over=false;
             Difficulty.stageForRegEnemyHealth = 0;
             Difficulty.stageForHomingEnemyHealth = 0;
             Difficulty.stageForSpeedModifier = 0;
@@ -113,7 +117,7 @@ public class UIButtonTween : MonoBehaviour
             Difficulty.regularEnemyHealthModifier = 0;
             Difficulty.regularEnemySpeedModifier = 0;
             Difficulty.homingEnemySpeedModifier = 0;
-            EnemySpawn.delay = -5f;           
+            EnemySpawn.delay = -5f;
             Application.LoadLevel("Stage1");
         }
 		if (enabled)

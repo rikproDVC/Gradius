@@ -6,6 +6,7 @@ public class MouseColor : MonoBehaviour
     public bool isQuit = false;
     public bool isSound = false;
     public bool isMenu = false;
+    public GameObject sounds;
 
     void OnMouseEnter()
     {
@@ -29,10 +30,14 @@ public class MouseColor : MonoBehaviour
         }
         if (isMenu)
         {
+            pause.paused=false;
+            pause.over=false;
             Application.LoadLevel("Menu");
         }
         else
         {
+            pause.paused=false;
+            pause.over=false;
             Difficulty.stageForRegEnemyHealth = 0;
             Difficulty.stageForHomingEnemyHealth = 0;
             Difficulty.stageForSpeedModifier = 0;
