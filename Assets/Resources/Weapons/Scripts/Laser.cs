@@ -7,7 +7,6 @@ public class Laser : MonoBehaviour {
 	public static float ConsumeRate = 0.01f;
 	public static int Damage = 1;
 
-	private float DamageTimer = 0f;
 	private float ConsumeTimer = 0f;
 	private Transform myTransform;
 	private Vector3 Position;

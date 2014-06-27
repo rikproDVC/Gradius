@@ -16,7 +16,14 @@ public class HomingEnemy : MonoBehaviour {
     private int Health;
     private float Speed;
     private float speedIncreaseTimer;
-    private float LaserTimer = 0;
+
+    //Get the wave number to get the difficulty level
+    private int stageForHomingEnemyHealth = EnemySpawn.wave;
+    private int stageForSpeedModifier = EnemySpawn.wave;
+    
+    // make variables for setting health and speed variables in enemies
+    private int homingEnemyHealthModifier;
+    private float homingEnemySpeedModifier;
 
     
     // Use this for initialization
@@ -24,9 +31,37 @@ public class HomingEnemy : MonoBehaviour {
     {
         //cache transform
         myTransform = transform;
+
+        if (stageForHomingEnemyHealth > 100)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 80)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 60)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 40)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 20)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+
         speedIncreaseTimer = Time.time;
-        Speed = 6 + Difficulty.homingEnemySpeedModifier;
-        Health = 4 + Difficulty.homingEnemyHealthModifier;
+        homingEnemySpeedModifier = stageForSpeedModifier / 10;
+        Speed = 6 + homingEnemySpeedModifier;
+        Health = 4 + homingEnemyHealthModifier;
     }
 	
     // Update is called once per frame
@@ -56,16 +91,6 @@ public class HomingEnemy : MonoBehaviour {
         }
     }
     
-    // Collision detector...
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Player.PlayerScore -= 100;
-            Destroy(this.gameObject);
-        }
-    }
-    
     // Collision ...
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -91,7 +116,6 @@ public class HomingEnemy : MonoBehaviour {
         //... with Player
         if(other.transform.tag == "Player" && Player.ShieldActive == false)
         {
-            Player.PlayerScore -= 100;
             Player.PlayerLives -= 1;
             Destroy(this.gameObject);
         }

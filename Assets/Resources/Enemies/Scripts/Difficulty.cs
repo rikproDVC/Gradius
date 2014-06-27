@@ -16,17 +16,58 @@ public class Difficulty : MonoBehaviour {
 	// Use this for initialization
 	void Start()
     {
-        while (stageForRegEnemyHealth > 10)
+        if (stageForRegEnemyHealth > 50)
         {
-            regularEnemyHealthModifier =+ 4;
+            regularEnemyHealthModifier += 4;
             stageForRegEnemyHealth -= 10;
         }
-        while (stageForHomingEnemyHealth > 20)
+        if (stageForRegEnemyHealth > 40)
         {
-            homingEnemyHealthModifier =+ 4;
-            stageForHomingEnemyHealth -= 10;
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 30)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 20)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 10)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
         }
 
+        if (stageForHomingEnemyHealth > 100)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 80)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 60)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 40)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        if (stageForHomingEnemyHealth > 20)
+        {
+            homingEnemyHealthModifier += 4;
+            stageForHomingEnemyHealth -= 10;
+        }
+        
         regularEnemySpeedModifier = stageForSpeedModifier / 10;
         homingEnemySpeedModifier = stageForSpeedModifier / 20;
 	}

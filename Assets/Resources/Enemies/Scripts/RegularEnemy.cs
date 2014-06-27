@@ -6,12 +6,20 @@ public class RegularEnemy: MonoBehaviour
     public GameObject PowerUpFab;
     public GameObject ExplosionFab;
     private int Health;
-    public static float Speed;
+    private float Speed;
 
 	private Transform myTransform;
     private Vector3 position;
     private float Timer = 0f;
     private bool ExplosionDamage = false;
+
+    //Get the wave number to get the difficulty level
+    private int stageForRegEnemyHealth = EnemySpawn.wave;
+    private int stageForSpeedModifier = EnemySpawn.wave;
+    
+    // make variables for setting health and speed variables in enemies
+    private int regularEnemyHealthModifier;
+    private float regularEnemySpeedModifier;
 
 	// Use this for initialization
 	void Start()
@@ -19,8 +27,36 @@ public class RegularEnemy: MonoBehaviour
         //cache transform
         myTransform = transform;
 
-        Speed = 8 + Difficulty.regularEnemySpeedModifier;
-        Health = 4 + Difficulty.regularEnemyHealthModifier;
+        if (stageForRegEnemyHealth > 50)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 40)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 30)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 20)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+        if (stageForRegEnemyHealth > 10)
+        {
+            regularEnemyHealthModifier += 4;
+            stageForRegEnemyHealth -= 10;
+        }
+
+        regularEnemySpeedModifier = stageForSpeedModifier / 10;
+
+        Speed = 8 + regularEnemySpeedModifier;
+        Health = 4 + regularEnemyHealthModifier;
 	}
 	
 	// Update is called once per frame
@@ -48,16 +84,6 @@ public class RegularEnemy: MonoBehaviour
 		}
 	}
 
-	// Collision detector...
-	void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Player.PlayerScore -= 100;
-            Destroy(this.gameObject);
-        }
-    }
-    
     // Collision ...
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -83,7 +109,6 @@ public class RegularEnemy: MonoBehaviour
         //... with Player
         if(other.transform.tag == "Player" && Player.ShieldActive == false)
         {
-            Player.PlayerScore -= 100;
             Player.PlayerLives -= 1;
             Destroy(this.gameObject);
         }

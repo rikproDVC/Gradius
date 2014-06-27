@@ -170,8 +170,6 @@
      <Compile Include="Assets\Resources\Enemies\Scripts\HomingEnemySearch.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemy.cs" />
      <Compile Include="Assets\Resources\Enemies\Scripts\RegularEnemyPathReader.cs" />
-     <Compile Include="Assets\Resources\Enemies\Scripts\Turret.cs" />
-     <Compile Include="Assets\Resources\Enemies\Scripts\TurretSearch.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\General.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\Meteorite.cs" />
      <Compile Include="Assets\Resources\Levels\Scripts\MoveScript.cs" />

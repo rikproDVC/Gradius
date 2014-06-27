@@ -12,7 +12,6 @@ public class General : MonoBehaviour {
     public float dist;
 
     private Vector3 position;
-    private int Speed = 5;
 
 	// Use this for initialization
 	void Start()
@@ -33,9 +32,9 @@ public class General : MonoBehaviour {
 
         dist = (transform.position - Camera.main.transform.position).z;
 
-        leftBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).x;
-        rightBorder = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, dist)).x;
+        leftBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 0, dist)).x;
+        rightBorder = Camera.main.ViewportToWorldPoint(new Vector3 (1, 0, dist)).x;
         topBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 1, dist)).y;
-        bottomBorder = Camera.main.ViewportToWorldPoint (new Vector3 (0, 0, dist)).y;        
+        bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3 (0, 0, dist)).y;        
 	}
 }

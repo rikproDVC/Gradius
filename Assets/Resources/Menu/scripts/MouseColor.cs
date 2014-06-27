@@ -5,6 +5,7 @@ public class MouseColor : MonoBehaviour
 {
     public bool isQuit = false;
     public bool isSound = false;
+    public bool isMenu = false;
 
     void OnMouseEnter()
     {
@@ -18,13 +19,17 @@ public class MouseColor : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(isQuit)
+        if (isQuit)
         {
             Application.Quit();
         }
-        if(isSound)
+        if (isSound)
         {
             Application.LoadLevel("SoundOptions");
+        }
+        if (isMenu)
+        {
+            Application.LoadLevel("Menu");
         }
         else
         {

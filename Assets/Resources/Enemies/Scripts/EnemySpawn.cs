@@ -13,34 +13,25 @@ public class EnemySpawn : MonoBehaviour {
     public static string[] rotations;
     public static float[] xMarkers;
     public static float[] yMarkers;
-    private float nullPath;
+    private float nullPath = 361;
 
     public Vector3 playerPosition;
 
     //make variables for getting waves and wave numbers
-    public static int wave;
+    public static int wave = 0;
     private int waveType;
-    public static float delay;
-    private bool complete;
-
+    public static float delay = -5f;
+    private bool complete = true;
 
     //make variables for inside waves
-	private float spawnTimer;
-	private int i;
+    private float spawnTimer = 0f;
+    private int i = 0;
     private int length;
-	private int order;
+    private int order = 0;
 
 	void Start ()
     {
-        nullPath = 361;
 
-        wave = 0;
-        delay = -5f;
-        complete = true;
-
-        spawnTimer = 0f;
-        i = 0;
-        order = 0;
     }
 
 	void Update()
